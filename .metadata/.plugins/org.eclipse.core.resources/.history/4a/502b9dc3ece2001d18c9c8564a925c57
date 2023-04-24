@@ -1,0 +1,5 @@
+package com.arcesi.orderservice.exceptions.handlers;
+
+public class ErrorsDTO {
+
+}

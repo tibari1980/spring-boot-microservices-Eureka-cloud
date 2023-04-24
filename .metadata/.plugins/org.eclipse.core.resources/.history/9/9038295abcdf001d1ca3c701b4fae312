@@ -1,0 +1,23 @@
+package com.arcesi.ProductService.controllers;
+
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.arcesi.ProductService.dtos.requests.ProductRequest;
+import com.arcesi.ProductService.dtos.responses.ProductResponse;
+
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
+public interface ApiRestCategory {
+	
+	    // http://localhost:8080/api/v1/categories/5/products
+	
+	@PostMapping(value = "{CategoryId}/products",produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+		public ResponseEntity<ProductResponse> createProduct(@RequestBody ProductRequest productRequest,
+				@PathVariable("CategoryId") Long CategoryId);
+
+		
+
+}

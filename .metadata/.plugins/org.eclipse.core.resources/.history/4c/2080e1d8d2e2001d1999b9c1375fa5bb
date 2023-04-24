@@ -1,0 +1,44 @@
+package com.arcesi.orderservice.entities;
+
+import java.time.Instant;
+
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+import org.hibernate.validator.constraints.UniqueElements;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+@Entity
+@Table(name="ORDERS",uniqueConstraints = {
+		
+})
+@NoArgsConstructor
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+@Data
+public class OrederEntity extends AbstractEntity {/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private Long codeOrder;
+	private String uidOrder;
+	private Long idProduct;
+	private String statusOrder;
+	private Instant dateOrder;
+	private int quantiteOrder;
+	private double montantOrder;
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "client_id", nullable = false)
+	@OnDelete(action = OnDeleteAction.CASCADE)
+	private ClientEntity clientEntity;
+
+}

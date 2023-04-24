@@ -1,0 +1,16 @@
+package com.arcesi.ProductService.services;
+
+import java.util.List;
+
+import com.arcesi.ProductService.dtos.ProductDTO;
+
+public interface ProductService {
+
+	List<ProductDTO> getAllProductByDesignationContaining(String partialDesignation, int page, int limit);
+
+	ProductDTO getProductById(final Long idProduct);
+
+	ProductDTO getProductByUid(final String codeUid);
+
+
+}

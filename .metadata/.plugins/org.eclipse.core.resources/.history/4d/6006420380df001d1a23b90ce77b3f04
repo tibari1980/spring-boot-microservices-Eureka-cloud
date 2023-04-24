@@ -1,0 +1,27 @@
+package com.arcesi.ProductService.services.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.arcesi.ProductService.dtos.ProductDTO;
+import com.arcesi.ProductService.repositories.ProductRepository;
+import com.arcesi.ProductService.services.ProductService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class ProductServiceImp implements ProductService {
+
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	public List<ProductDTO> getAllProductByDesignationContaining(String partialDesignation, int page, int limit) {
+		log.info("Inside methode getAllProductByDesignationContaining of ProductServiceImp  PartialDesignaiton : {} , page : {} , limit : {}",partialDesignation,page,limit);
+		return null;
+	}
+
+}

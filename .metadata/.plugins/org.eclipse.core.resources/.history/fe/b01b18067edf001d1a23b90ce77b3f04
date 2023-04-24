@@ -1,0 +1,6 @@
+package com.arcesi.ProductService.services;
+
+public interface ProductService {
+
+
+}

@@ -1,0 +1,5 @@
+package com.arcesi.orderservice.dtos;
+
+public class AbstractEntityDTO {
+
+}

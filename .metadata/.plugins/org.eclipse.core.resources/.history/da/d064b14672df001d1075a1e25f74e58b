@@ -1,0 +1,21 @@
+package com.arcesi.ProductService.dtos.responses;
+
+import java.time.Instant;
+
+import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+@Data
+@AllArgsConstructor
+@MappedSuperclass
+@SuperBuilder
+public class AbstractEntityResponse {
+	private static final long serialVersionUID = 1L;
+
+	private Instant createdAt;
+
+	private Instant updatedAt;
+
+}

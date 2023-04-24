@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.validators;
+
+public class ObjectValidators {
+
+}

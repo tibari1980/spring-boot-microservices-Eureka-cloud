@@ -1,0 +1,26 @@
+package com.arcesi.ProductService.exceptions.handlers;
+
+import java.util.Map;
+import java.util.Set;
+
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+
+import jakarta.validation.Path;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+public class ErrorsDTO {
+
+	private Integer httpCode;
+	private ErrorsCodeEnumeration codeEnum;
+	private String message;
+	private Map<Path,String> lstErrors;
+	private String timeStamp;
+
+}

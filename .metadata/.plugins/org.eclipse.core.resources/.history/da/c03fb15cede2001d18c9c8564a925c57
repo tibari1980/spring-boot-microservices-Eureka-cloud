@@ -1,0 +1,5 @@
+package com.arcesi.orderservice.utils;
+
+public class IUtils {
+
+}

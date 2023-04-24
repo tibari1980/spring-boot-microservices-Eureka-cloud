@@ -1,0 +1,50 @@
+package com.arcesi.ProductService.services.impl;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
+
+import com.arcesi.ProductService.dtos.ProductDTO;
+import com.arcesi.ProductService.entities.ProductEntity;
+import com.arcesi.ProductService.repositories.ProductRepository;
+import com.arcesi.ProductService.services.ProductService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class ProductServiceImp implements ProductService {
+
+	@Autowired
+	private ProductRepository productRepository;
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Override
+	public List<ProductDTO> getAllProductByDesignationContaining(String partialDesignation, int page, int limit) {
+		log.info(
+				"Inside methode getAllProductByDesignationContaining of ProductServiceImp  PartialDesignaiton : {} , page : {} , limit : {}",
+				partialDesignation, page, limit);
+		if (page > 0) {
+			page = page + 1;
+		}
+		Pageable pageable = PageRequest.of(page, limit, Sort.by("codeProduct").ascending());
+		Page<ProductEntity> pageProducts = productRepository.findByDesignationContainingIgnoreCase(partialDesignation,
+				pageable);
+
+		List<ProductEntity> lstProduct = pageProducts.getContent();
+		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+		List<ProductDTO> dtosProduct = lstProduct.stream().map(pr -> modelMapper.map(pr, ProductDTO.class))
+				.collect(Collectors.toList());
+		return dtosProduct;
+	}
+
+}

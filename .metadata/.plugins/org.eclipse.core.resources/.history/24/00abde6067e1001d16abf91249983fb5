@@ -1,0 +1,87 @@
+package com.arcesi.ProductService.controllers.imp;
+
+import org.apache.commons.lang3.StringUtils;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.arcesi.ProductService.controllers.ApiRestCategory;
+import com.arcesi.ProductService.dtos.CategoryDTO;
+import com.arcesi.ProductService.dtos.ProductDTO;
+import com.arcesi.ProductService.dtos.requests.CategoryRequest;
+import com.arcesi.ProductService.dtos.requests.ProductRequest;
+import com.arcesi.ProductService.dtos.responses.CategoryResponse;
+import com.arcesi.ProductService.dtos.responses.ProductResponse;
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+import com.arcesi.ProductService.exceptions.ArgumentNotValidException;
+import com.arcesi.ProductService.services.CategoryService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@CrossOrigin(origins = "http://localhost:8086")
+@RestController
+@RequestMapping(value = "/api/v1/categories/")
+@Slf4j
+@Validated
+public class ApiRestCategoryController implements ApiRestCategory {
+
+	@Autowired
+	private CategoryService categoryService;
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Override
+	public ResponseEntity<ProductResponse> createProduct(ProductRequest productRequest, Long categoryId) {
+		log.info("Inside méthode createProduct in Controller CategoryRestController  product: {} ,identifiant category : {}",productRequest.toString(), categoryId);
+		ProductDTO productDTO=categoryService.createProduct(modelMapper.map(productRequest, ProductDTO.class),categoryId);
+		return new ResponseEntity<ProductResponse>(modelMapper.map(productDTO, ProductResponse.class),HttpStatus.CREATED);
+	}
+
+	@Override
+	public ResponseEntity<CategoryResponse> createCategory(CategoryRequest categoryRequest) {
+		log.info("Inside méthode createCategory in Controller CategoryRestController  Category : {} ",categoryRequest.toString());
+		CategoryDTO categoryDTO=categoryService.createCategory(modelMapper.map(categoryRequest, CategoryDTO.class));
+		return new ResponseEntity<CategoryResponse>(modelMapper.map(categoryDTO, CategoryResponse.class),HttpStatus.CREATED);
+	}
+
+	@Override
+	public ResponseEntity<CategoryResponse> findCategoryById(String id) {
+		log.info("Inside methode findCategoryById of ApiRestCategoryController  code Categoyr : {} ", id);
+
+		if (StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
+			log.error("Code Category is not valide try again : {}", id);
+			throw new ArgumentNotValidException("Code Category : `" + id + "` is not valid try again",
+					ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
+		}
+		CategoryDTO catDTO = categoryService.getCategoryById(Long.parseLong(id));
+
+		return new ResponseEntity<CategoryResponse>(modelMapper.map(catDTO, CategoryResponse.class), HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<CategoryResponse> findCategoryByUid(String uid) {
+		log.info("Inside methode findCategoryByUid of ApiRestCategoryController  uid Categoyr : {} ", uid);
+
+		if (StringUtils.isBlank(uid)) {
+			log.error("Uid Category is not valide try again : {}", uid);
+			throw new ArgumentNotValidException("Uid Category : `" + uid + "` is not valid try again",
+					ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
+		}
+		CategoryDTO catDTO = categoryService.getCategoryByUid(uid);
+
+		return new ResponseEntity<CategoryResponse>(modelMapper.map(catDTO, CategoryResponse.class), HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<CategoryResponse> updateCategory(CategoryRequest catRequest, Long idCa) {
+		
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,122 @@
+package com.arcesi.ProductService.services.impl;
+
+import java.time.Instant;
+import java.util.Map;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.arcesi.ProductService.dtos.CategoryDTO;
+import com.arcesi.ProductService.dtos.ProductDTO;
+import com.arcesi.ProductService.entities.CategoryEntity;
+import com.arcesi.ProductService.entities.ProductEntity;
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+import com.arcesi.ProductService.exceptions.ArgumentNotValideEntityException;
+import com.arcesi.ProductService.exceptions.EntityNotFoundException;
+import com.arcesi.ProductService.repositories.CategoryRepository;
+import com.arcesi.ProductService.repositories.ProductRepository;
+import com.arcesi.ProductService.services.CategoryService;
+import com.arcesi.ProductService.validators.ObjectValidators;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+@Transactional
+public class CategoryServiceImpl implements CategoryService {
+
+	@Autowired
+	private CategoryRepository categoryRepository;
+
+	@Autowired
+	private ModelMapper modelMapper;
+	@Autowired
+	private ObjectValidators<ProductDTO> validator;
+
+	@Autowired
+	private ObjectValidators<CategoryDTO> validatorCat;
+	@Autowired
+	private ProductRepository productRepository;
+
+	@Override
+	public ProductDTO createProduct(ProductDTO productDTO, Long categoryId) {
+
+		log.info("Inside methode saveProduct of CategoryServiceImp  productDTO : {}  : code category : {}", productDTO,
+				categoryId);
+		productDTO.setCreatedAt(Instant.now());
+		Map<String, String> violations = validator.validate(productDTO);
+		if (!violations.isEmpty()) {
+
+			log.error("There are errors while saving product try again ! ", violations);
+			throw new ArgumentNotValideEntityException("There are errors while saving product try again !!!",
+					ErrorsCodeEnumeration.PRODUCT_NOT_FOUND, violations);
+		}
+		CategoryEntity findCategory = categoryRepository.findById(categoryId)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"Category with id : ` " + categoryId + "` not found in our data base try again !!",
+						ErrorsCodeEnumeration.CATEGORY_NOT_FOUND));
+		// check if Product Exist by Designation
+		Optional<ProductEntity> ifExistProduct = productRepository
+				.findByDesignationIgnoreCase(productDTO.getDesignation());
+		if (ifExistProduct.isPresent()) {
+			log.error("Product exist with : ` {} ` in our data base try again!!", productDTO.getDesignation());
+			throw new EntityNotFoundException(
+					"Product exist with : `" + productDTO.getDesignation() + "` in our data base try again!!",
+					ErrorsCodeEnumeration.PRODUCT_NOT_FOUND);
+		}
+
+		productDTO.setCategoryDTO(modelMapper.map(findCategory, CategoryDTO.class));
+		productDTO.setUidProduct(UUID.randomUUID().toString());
+		ProductEntity entity = modelMapper.map(productDTO, ProductEntity.class);
+
+		ProductEntity bean = productRepository.save(entity);
+		log.info("Product created successfully !!", bean.toString());
+		return modelMapper.map(bean, ProductDTO.class);
+
+	}
+
+	@Override
+	public CategoryDTO createCategory(CategoryDTO categoryDto) {
+
+		log.info("Inside methode createCategory of CategoryServiceImp  categoryDTO : {} ", categoryDto.toString());
+		categoryDto.setCreatedAt(Instant.now());
+		Map<String, String> violations = validatorCat.validate(categoryDto);
+		if (!violations.isEmpty()) {
+
+			log.error("There are errors while saving product try again ! ", violations);
+			throw new ArgumentNotValideEntityException("There are errors while saving product try again !!!",
+					ErrorsCodeEnumeration.PRODUCT_NOT_FOUND, violations);
+		}
+
+		// check if Category Exist by libelle
+		Optional<CategoryEntity> ifExistCategory = categoryRepository.findByLibelleIgnoreCase(categoryDto.getLibelle());
+		if (ifExistCategory.isPresent()) {
+			log.error("Category exist with : ` {} ` in our data base try again!!", categoryDto.getLibelle());
+			throw new EntityNotFoundException(
+					"Category exist with : `" + categoryDto.getLibelle() + "` in our data base try again!!",
+					ErrorsCodeEnumeration.CATEGORY_NOT_FOUND);
+		}
+
+		categoryDto.setUidCategory(UUID.randomUUID().toString());
+
+		CategoryEntity cat = categoryRepository.saveAndFlush(modelMapper.map(categoryDto, CategoryEntity.class));
+		log.info("Category created successfully !!", cat.toString());
+		return modelMapper.map(cat, CategoryDTO.class);
+
+	}
+
+	@Override
+	public CategoryDTO getCategoryById(Long idCate) {
+		log.info("Inside getCategoryById of CategoryServiceImp  Code category : {}", idCate);
+		CategoryEntity findCate = categoryRepository.findById(idCate)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"Category with id : `" + idCate + "` not found in our data base try again",
+						ErrorsCodeEnumeration.CATEGORY_NOT_FOUND));
+		log.info("Category finding with id : {} , category : {} ", idCate, findCate.toString());
+		return modelMapper.map(findCate, CategoryDTO.class);
+	}
+}

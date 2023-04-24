@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.controllers.imp;
+
+public class ApiRestProductController {
+
+}

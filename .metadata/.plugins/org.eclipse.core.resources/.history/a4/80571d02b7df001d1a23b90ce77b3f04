@@ -1,0 +1,28 @@
+package com.arcesi.ProductService.dtos.requests;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Data
+@SuperBuilder
+public class ProductRequest extends AbstractEntityRequest {
+
+	private static final long serialVersionUID = 1L;
+
+	private Long codeProduct;
+	private String uidProduct;
+	private String designation;
+	private String description;
+	private double prix;
+	private int quantiteStock;
+
+	private Boolean isDisponible;
+	private Boolean isEnPromotion;
+	private String photo;
+	private CategoryRequest categoryRequest;
+
+}

@@ -1,0 +1,86 @@
+package com.arcesi.ProductService.controllers.imp;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.apache.commons.lang3.StringUtils;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.arcesi.ProductService.controllers.ApiRestProduct;
+import com.arcesi.ProductService.dtos.ProductDTO;
+import com.arcesi.ProductService.dtos.responses.ProductResponse;
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+import com.arcesi.ProductService.exceptions.ArgumentNotValidException;
+import com.arcesi.ProductService.services.ProductService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@CrossOrigin(origins = "http://localhost:8086")
+@RestController
+@RequestMapping(value = "/api/v1/products/")
+@Slf4j
+public class ApiRestProductController implements ApiRestProduct {
+
+	@Autowired
+	private ProductService productService;
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Override
+	public ResponseEntity<List<ProductResponse>> getAllProducts(String partialDesignation, int page, int limit) {
+		log.info("Inside methode getAllCategories of ApiRestProductController   Partial Designation : {} , page : {} ,limi :{}",
+				partialDesignation, page, limit);
+	  List<ProductDTO> lstProductDtos=productService.getAllProductByDesignationContaining(partialDesignation,page,limit);
+	  if(lstProductDtos.isEmpty()) {
+		  return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	  }
+	  List<ProductResponse> lstProductsResponse=lstProductDtos.stream().map(p->modelMapper.map(p, ProductResponse.class)).collect(Collectors.toList());	 
+	return new ResponseEntity<List<ProductResponse>>(lstProductsResponse,HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<ProductResponse> findProductById(String id) {
+		log.info("Inside methode findById of ApiRestProductController  code product : {} ",id);
+	
+		if(StringUtils.isBlank(id) || !StringUtils.isNumeric(id)) {
+			log.error("Code Product is not valide try again : {}",id);
+			throw new ArgumentNotValidException("Code Product : `" + id +"` is not valid try again",ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
+		}
+		ProductDTO productDTO=productService.getProductById(Long.parseLong(id));
+		
+		return new ResponseEntity<ProductResponse>(modelMapper.map(productDTO, ProductResponse.class),HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<ProductResponse> findProductByUid(String code) {
+		log.info("Inside methode findByUid of ApiRestProductController  code product : {} ",code);
+	
+		if(StringUtils.isBlank(code)) {
+			log.error("Code Product is not valide try again : {}",code);
+			throw new ArgumentNotValidException("Code Product : `" + code +"` is not valid try again",ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
+		}
+		ProductDTO productDTO=productService.getProductByUid(code);
+		
+		return new ResponseEntity<ProductResponse>(modelMapper.map(productDTO, ProductResponse.class),HttpStatus.OK);
+	}
+
+	@Override
+	public ResponseEntity<ProductResponse> findProductByDesignation(String designation) {
+		log.info("Inside methode findProductByDesignation of ApiRestProductController  Designation product : {} ",designation);
+	
+		if(StringUtils.isBlank(designation) || StringUtils.isNumeric(designation)) {
+			log.error("Designation Product is not valide try again : {}",designation);
+			throw new ArgumentNotValidException("Designation Product : `" + designation +"` is not valid try again",ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
+		}
+		ProductDTO productDTO=productService.getProductByDesignation(designation);
+		
+		return new ResponseEntity<ProductResponse>(modelMapper.map(productDTO, ProductResponse.class),HttpStatus.OK);
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.arcesi.ProductService.services;
+
+import com.arcesi.ProductService.dtos.CategoryDTO;
+import com.arcesi.ProductService.dtos.ProductDTO;
+
+public interface CategoryService {
+	
+	public CategoryDTO saveCategory(CategoryDTO cate);
+
+	public ProductDTO createProduct(ProductDTO productDTO, Long categoryId);
+
+}

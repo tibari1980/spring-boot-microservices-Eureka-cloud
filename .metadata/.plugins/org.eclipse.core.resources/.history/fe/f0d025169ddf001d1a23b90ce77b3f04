@@ -1,0 +1,20 @@
+package com.arcesi.ProductService.exceptions;
+
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+
+public class ArgumentNotValidException extends RuntimeException {
+
+	 
+	private static final long serialVersionUID = 1L;
+	private ErrorsCodeEnumeration errorEnum;
+
+	public ArgumentNotValidException(String message) {
+		super(message);
+		
+	}
+	
+	
+	
+	
+
+}

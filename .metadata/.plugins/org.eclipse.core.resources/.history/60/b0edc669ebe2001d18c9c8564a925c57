@@ -1,0 +1,6 @@
+package com.arcesi.orderservice.exceptions;
+
+public class EntityNotValideException extends RuntimeException {
+
+	
+}

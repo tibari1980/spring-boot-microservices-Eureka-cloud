@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.exceptions;
+
+public class ArgumentNotValidException {
+
+}

@@ -1,0 +1,9 @@
+package com.arcesi.ProductService.services;
+
+import com.arcesi.ProductService.dtos.CategoryDTO;
+
+public interface ProductService {
+	
+	public CategoryDTO saveCategory(CategoryDTO cate);
+
+}

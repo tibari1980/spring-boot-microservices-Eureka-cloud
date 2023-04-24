@@ -1,0 +1,8 @@
+package com.arcesi.ProductService.validators;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ObjectValidators {
+
+}

@@ -1,0 +1,36 @@
+package com.arcesi.orderservice.dtos.responses;
+
+import java.time.Instant;
+
+import com.arcesi.orderservice.dtos.AbstractDTO;
+import com.arcesi.orderservice.dtos.ClientDTO;
+import com.arcesi.orderservice.dtos.OrderDTO;
+
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Data
+@SuperBuilder
+@NoArgsConstructor
+public class OrderResponse extends AbstractResponse{
+
+
+
+	private static final long serialVersionUID = 1L;
+	private Long codeOrder;
+	private String uidOrder;
+	private Long idProduct;
+	private String statusOrder;
+	private Instant dateOrder;
+	private int quantiteOrder;
+	private double montantOrder;
+	private ClientDTO clientDTO;
+
+
+}

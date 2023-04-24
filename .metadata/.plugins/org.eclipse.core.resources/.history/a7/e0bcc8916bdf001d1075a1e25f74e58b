@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.repositories;
+
+public interface CategoryRepository {
+
+}

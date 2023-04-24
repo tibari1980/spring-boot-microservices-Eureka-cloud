@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.controllers;
+
+public interface ApiRestCategory {
+
+}

@@ -1,0 +1,13 @@
+package com.arcesi.ProductService.exceptions;
+
+import java.util.Map;
+
+import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
+
+public class ArgumentNotValideEntityException extends RuntimeException {
+
+	private static final long serialVersionUID = 1L;
+	private ErrorsCodeEnumeration errorEnum;
+	private Map<String, String> lstErrors;
+
+}

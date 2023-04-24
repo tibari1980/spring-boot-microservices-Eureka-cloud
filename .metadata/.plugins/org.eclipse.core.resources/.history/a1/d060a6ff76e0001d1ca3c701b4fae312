@@ -1,0 +1,37 @@
+package com.arcesi.ProductService.validators;
+
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.Path;
+import jakarta.validation.Validator;
+
+@Component
+public class ObjectValidators<T> {
+
+	@Autowired
+	private Validator validator;
+
+	public Set<String> validate(T objectToValidate) {
+		Set<ConstraintViolation<T>> violations = validator.validate(objectToValidate);
+		
+		Path  path1=violations.iterator().next().getPropertyPath();
+		Iterator<Path.Node> noIterator=path1.iterator();
+		
+		if (!violations.isEmpty()) {
+			
+			return violations.stream().map(ConstraintViolation::getMessage ).collect(Collectors.toSet());
+			
+
+			
+		}
+		return Collections.emptyMap();
+	}
+}

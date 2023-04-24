@@ -1,0 +1,5 @@
+package com.arcesi.ProductService.dtos.responses;
+
+public class AbstractEntityResponse {
+
+}
