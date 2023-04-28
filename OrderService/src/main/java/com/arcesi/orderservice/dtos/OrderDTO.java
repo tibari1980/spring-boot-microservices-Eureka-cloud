@@ -32,7 +32,6 @@ public class OrderDTO implements Serializable {
 	private Instant dateOrder;
 	@Min(value = 1, message = "Quantite order should be not  less 1 euro")
 	private int quantiteOrder;
-	@Min(value = 1, message = "Amount order shout be not less 1 euro")
 	private double montantOrder;
 	private ClientDTO clientDTO;
 	@NotBlank(message = "Payement mode is mandatory.")

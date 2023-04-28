@@ -37,6 +37,7 @@ public class OrderRequest implements Serializable {
 	private Instant dateOrder;
 	private int quantiteOrder;
 
+	@JsonIgnore
 	private double montantOrder;
 	private PaymentModeEnum paymentMode;
 	@JsonIgnore

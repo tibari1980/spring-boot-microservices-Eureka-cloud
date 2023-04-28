@@ -28,6 +28,7 @@ import com.arcesi.ProductService.validators.ObjectValidators;
 
 import lombok.extern.slf4j.Slf4j;
 
+
 @Service
 @Slf4j
 @Transactional

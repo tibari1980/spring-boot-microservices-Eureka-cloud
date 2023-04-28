@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,6 +18,8 @@ import com.arcesi.orderservice.enums.ErrorsCodeEnumeration;
 import com.arcesi.orderservice.enums.EtatOrder;
 import com.arcesi.orderservice.exceptions.EntityNotFoundException;
 import com.arcesi.orderservice.exceptions.InvalidEntityException;
+import com.arcesi.orderservice.external.client.ProductService;
+import com.arcesi.orderservice.external.client.dtos.ProductResponse;
 import com.arcesi.orderservice.repositories.ClientRepository;
 import com.arcesi.orderservice.repositories.OrderRepository;
 import com.arcesi.orderservice.services.OrderService;
@@ -36,6 +39,9 @@ public class OrderServieImp implements OrderService {
 
 	@Autowired
 	private ModelMapper modelMapper;
+	
+	@Autowired
+	private ProductService productService;
 
 	@Autowired
 	private ObjectValidators<OrderDTO> orderValidators;
@@ -54,9 +60,14 @@ public class OrderServieImp implements OrderService {
 					com.arcesi.orderservice.enums.ErrorsCodeEnumeration.ORDER_NOT_VALIDE, violations);
 		}
 
+		
+		ResponseEntity<ProductResponse> product= productService.findProductById(orderDto.getIdProduct());
+		
+		productService.reduceQuantite(orderDto.getIdProduct(), orderDto.getQuantiteOrder());
 		//chek Custumer if exist
 		ClientEntity ifClientExist=clientRepository.findById(idClient).orElseThrow(()->new EntityNotFoundException("Costumer with  :` "+idClient+"` not found in our data base .",ErrorsCodeEnumeration.CLIENT_NOT_FOUND));
 		orderDto.setStatusOrder(EtatOrder.CREATED.getCode());
+		orderDto.setMontantOrder(orderDto.getQuantiteOrder()* product.getBody().getPrix());
 		orderDto.setClientDTO(modelMapper.map(ifClientExist, ClientDTO.class));
 		return modelMapper.map(orderRepository.save(modelMapper.map(orderDto, OrderEntity.class)), OrderDTO.class);
 	}

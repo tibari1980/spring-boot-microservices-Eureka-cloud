@@ -1,7 +1,6 @@
 package com.arcesi.orderservice.exceptions.handlers;
 
 import java.util.Map;
-import java.util.Set;
 
 import com.arcesi.orderservice.enums.ErrorsCodeEnumeration;
 
@@ -19,6 +18,6 @@ public class ConstraintsErrorsDTO {
 	private Integer httpCode;
 	private ErrorsCodeEnumeration codeEnum;
 	private String message;
-	private Map<String,String> lstErrors;
+	private Map<String, String> lstErrors;
 	private String timeStamp;
 }
