@@ -21,6 +21,7 @@ import com.arcesi.ProductService.entities.ProductEntity;
 import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
 import com.arcesi.ProductService.exceptions.ArgumentNotValideEntityException;
 import com.arcesi.ProductService.exceptions.EntityNotFoundException;
+import com.arcesi.ProductService.exceptions.InvalidEntityException;
 import com.arcesi.ProductService.repositories.ProductRepository;
 import com.arcesi.ProductService.services.ProductService;
 import com.arcesi.ProductService.validators.ObjectValidators;
@@ -182,6 +183,22 @@ public class ProductServiceImp implements ProductService {
 		productRepository.saveAndFlush(findProductInOurDB);
 		log.info("Product updated successfully : {}", findProductInOurDB);
 		return modelMapper.map(findProductInOurDB, ProductDTO.class);
+	}
+
+	@Override
+	public void reduceQuantite(Long idProduct, int quantity) {
+		log.info("Inside mehtode reduceQuantite of ProductuServiceImp  Product Id : {} , Quantite :{} ",idProduct,quantity);
+		ProductEntity findProduct = productRepository.findById(idProduct)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"Product with id : `" + idProduct + "` not found in our data base try again",
+						ErrorsCodeEnumeration.PRODUCT_NOT_FOUND));
+		
+	    if(findProduct.getQuantiteStock()<quantity) {
+	    	throw new InvalidEntityException("Product does not have sufficient qunaty",ErrorsCodeEnumeration.PRODUCT_INSUFFICIENT_QUANTITE);
+	    }
+	    findProduct.setQuantiteStock(findProduct.getQuantiteStock()-quantity);
+	    productRepository.saveAndFlush(findProduct);
+	    log.info("Product Quantity updated successfully product : {} ", findProduct.toString());
 	}
 
 }

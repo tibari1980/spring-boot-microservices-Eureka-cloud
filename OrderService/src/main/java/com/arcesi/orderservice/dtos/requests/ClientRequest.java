@@ -3,20 +3,21 @@ package com.arcesi.orderservice.dtos.requests;
 import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
 
 @EqualsAndHashCode
 @ToString
-@Data
+@Getter
+@Setter
 @Builder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class ClientRequest implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -27,7 +28,6 @@ public class ClientRequest implements Serializable {
 	private String prenomClient;
 	private String adressePostaleClient;
 	private String email;
-	@Column(name = "DATE_NAISSANCE_CLIENT", updatable = true, insertable = true, nullable = false)
 	private Date dateNaissanceClient;
 	private String sexClient;
 	private String telephoneClient;

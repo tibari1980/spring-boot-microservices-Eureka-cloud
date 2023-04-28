@@ -15,9 +15,9 @@ public class OrderServiceApplication {
 
 	@Bean
 	public ModelMapper modelMapper() {
-		ModelMapper modelMapper = new ModelMapper();
-		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
-		return modelMapper;
+		ModelMapper mapper=new ModelMapper();
+		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
+		return mapper;
 	}
 
 	public static void main(String[] args) {

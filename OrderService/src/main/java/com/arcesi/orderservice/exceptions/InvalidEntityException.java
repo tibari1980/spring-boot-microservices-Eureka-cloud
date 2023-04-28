@@ -1,6 +1,6 @@
 package com.arcesi.orderservice.exceptions;
 
-import java.util.Set;
+import java.util.Map;
 
 import com.arcesi.orderservice.enums.ErrorsCodeEnumeration;
 
@@ -12,7 +12,7 @@ public class InvalidEntityException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 	private ErrorsCodeEnumeration errorEnum;
-	private Set<String> lstErrors;
+	private Map<String, String> lstErrors;
 
 	public InvalidEntityException(String message, Throwable cause) {
 		super(message, cause);
@@ -29,10 +29,10 @@ public class InvalidEntityException extends RuntimeException {
 		this.errorEnum = errosEnum;
 	}
 
-	public InvalidEntityException(String message, ErrorsCodeEnumeration errosEnum, Set<String> errors) {
+	public InvalidEntityException(String message, ErrorsCodeEnumeration errosEnum, Map<String, String> lstErrors) {
 		super(message);
 		this.errorEnum = errosEnum;
-		this.lstErrors = errors;
+		this.lstErrors = lstErrors;
 	}
 
 	public InvalidEntityException(String message, ErrorsCodeEnumeration errosEnum) {

@@ -52,7 +52,7 @@ public class JeuTest implements CommandLineRunner {
 		CategoryEntity catOrdi=categoryRepository.save(ordinateur);
 		CategoryEntity cateLivre=categoryRepository.save(livre);
 		
-		for(int i=0;i<2000;i++) {
+		for(int i=0;i<200;i++) {
 			ProductEntity tele=ProductEntity.builder()
 					.uidProduct(UUID.randomUUID().toString())
 					.designation("IPHONE PRO"+i)

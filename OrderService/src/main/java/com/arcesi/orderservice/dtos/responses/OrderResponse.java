@@ -1,22 +1,27 @@
 package com.arcesi.orderservice.dtos.responses;
 
+import java.io.Serializable;
 import java.time.Instant;
 
 import com.arcesi.orderservice.dtos.ClientDTO;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-@Data
-@SuperBuilder
+@EqualsAndHashCode
+@ToString
+@Getter
+@Setter
+@Builder
 @NoArgsConstructor
-public class OrderResponse extends AbstractResponse{
+@AllArgsConstructor
+public class OrderResponse implements Serializable{
 
 
 
@@ -28,7 +33,9 @@ public class OrderResponse extends AbstractResponse{
 	private Instant dateOrder;
 	private int quantiteOrder;
 	private double montantOrder;
+	private String paymentMode;
 	private ClientDTO clientDTO;
+	
 
 
 }

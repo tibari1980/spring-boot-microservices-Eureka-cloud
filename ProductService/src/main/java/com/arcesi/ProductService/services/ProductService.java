@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.arcesi.ProductService.dtos.ProductDTO;
 
+import jakarta.validation.constraints.Positive;
+
 public interface ProductService {
 
 	List<ProductDTO> getAllProductByDesignationContaining(String partialDesignation, int page, int limit);
@@ -22,6 +24,8 @@ public interface ProductService {
 	void deleteById(final Long idProduct);
 
 	ProductDTO updateProduct(final ProductDTO dto,final Long idProduct);
+
+	void reduceQuantite( final Long idProduct,final  int quantity);
 
 	 
 

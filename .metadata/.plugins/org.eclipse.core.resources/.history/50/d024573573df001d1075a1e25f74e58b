@@ -1,5 +1,0 @@
-package com.arcesi.ProductService.dtos.requests;
-
-public class AbstractEntityRequest {
-
-}

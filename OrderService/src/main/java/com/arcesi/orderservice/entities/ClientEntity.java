@@ -1,5 +1,6 @@
 package com.arcesi.orderservice.entities;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -12,23 +13,26 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 import jakarta.persistence.UniqueConstraint;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 @Entity
 @Table(name = "CLIENTS", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "CODE_CLIENT", name = "SEQUENCE_CODE_CLIENT"),
 		@UniqueConstraint(columnNames = "CODE_UID_CLIENT", name = "SEQUENCE_CODE_UID_CLIENT"),
 		@UniqueConstraint(columnNames = "EMAIL_CLIENT", name = "SEQUENCE_EMAIL_CLIENT") })
-@Data
+
+@Getter
+@Setter
 @NoArgsConstructor
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-@SuperBuilder
-public class ClientEntity extends AbstractEntity {
+@AllArgsConstructor
+@Builder
+@ToString
+public class ClientEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 

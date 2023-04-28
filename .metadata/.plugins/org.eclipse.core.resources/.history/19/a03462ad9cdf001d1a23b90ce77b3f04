@@ -1,5 +1,0 @@
-package com.arcesi.ProductService.exceptions.handlers;
-
-public class MessageErrorDTO {
-
-}

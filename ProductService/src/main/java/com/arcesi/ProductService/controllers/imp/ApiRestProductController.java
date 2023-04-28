@@ -21,6 +21,7 @@ import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
 import com.arcesi.ProductService.exceptions.ArgumentNotValidException;
 import com.arcesi.ProductService.services.ProductService;
 
+import jakarta.validation.constraints.Positive;
 import lombok.extern.slf4j.Slf4j;
 
 @CrossOrigin(origins = "http://localhost:8086")
@@ -155,6 +156,15 @@ public class ApiRestProductController implements ApiRestProduct {
 		}
 		productService.deleteById(idProduct);
 		return new ResponseEntity<Object>("Product with id :`" + idProduct + "`deleted successfully  ", HttpStatus.NO_CONTENT);
+	}
+
+	@Override
+	public ResponseEntity<Void> reduceQuantite(
+			@Positive(message = "Product ID must be greater than zero") Long idProduct, int quantity) {
+		log.info("Inside methode reduceQuantite of ApiRestProductController  Product id : {} , Quantite :{}",idProduct,quantity);
+		
+		productService.reduceQuantite(idProduct,quantity);
+		return new ResponseEntity<Void>(HttpStatus.OK);
 	}
 
 }

@@ -1,5 +1,0 @@
-package com.arcesi.ProductService.entities;
-
-public class AbstractEntity {
-
-}

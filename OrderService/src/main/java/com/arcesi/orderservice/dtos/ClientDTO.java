@@ -1,20 +1,22 @@
 package com.arcesi.orderservice.dtos;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import jakarta.persistence.Column;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-@Data
-@SuperBuilder
+@Getter
+@Setter
 @NoArgsConstructor
-public class ClientDTO extends AbstractDTO {
+@AllArgsConstructor
+@Builder
+@ToString
+public class ClientDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -24,8 +26,8 @@ public class ClientDTO extends AbstractDTO {
 	private String prenomClient;
 	private String adressePostaleClient;
 	private String email;
-	@Column(name = "DATE_NAISSANCE_CLIENT", updatable = true, insertable = true, nullable = false)
 	private Date dateNaissanceClient;
 	private String sexClient;
 	private String telephoneClient;
+
 }

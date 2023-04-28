@@ -13,8 +13,8 @@ import lombok.experimental.SuperBuilder;
 @ToString(callSuper = true)
 @Data
 @SuperBuilder
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class ProductRequest extends AbstractEntityRequest {
 
 	private static final long serialVersionUID = 1L;

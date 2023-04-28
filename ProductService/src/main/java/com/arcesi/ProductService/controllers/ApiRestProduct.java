@@ -79,7 +79,9 @@ public interface ApiRestProduct {
 		@DeleteMapping(value="{idProduct}")
 		public ResponseEntity<Object> deleteProduct( @PathVariable(value="idProduct") @Min(1) @Positive(message = "Product ID must be greater than zero") Long idProduct);
 		
-		 
+		
+		@PutMapping(value = "/reduceQuantite/{idProduct}")
+		public ResponseEntity<Void> reduceQuantite(@PathVariable(name="idProduct") @Positive(message = "Product ID must be greater than zero") Long idProduct,@RequestParam(defaultValue = "0",name = "quantity") int quantity);
 
 		
 }
