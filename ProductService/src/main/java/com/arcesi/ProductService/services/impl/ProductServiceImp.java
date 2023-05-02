@@ -21,13 +21,12 @@ import com.arcesi.ProductService.entities.ProductEntity;
 import com.arcesi.ProductService.enums.ErrorsCodeEnumeration;
 import com.arcesi.ProductService.exceptions.ArgumentNotValideEntityException;
 import com.arcesi.ProductService.exceptions.EntityNotFoundException;
-import com.arcesi.ProductService.exceptions.InvalidEntityException;
+import com.arcesi.ProductService.exceptions.ProductServiceCustomException;
 import com.arcesi.ProductService.repositories.ProductRepository;
 import com.arcesi.ProductService.services.ProductService;
 import com.arcesi.ProductService.validators.ObjectValidators;
 
 import lombok.extern.slf4j.Slf4j;
-
 
 @Service
 @Slf4j
@@ -107,8 +106,7 @@ public class ProductServiceImp implements ProductService {
 			page = page + 1;
 		}
 		Pageable pageable = PageRequest.of(page, limit, Sort.by("codeProduct").ascending());
-		Page<ProductEntity> pageProducts = productRepository
-				.findByCategoryEntityCodeCategory(codeCategory, pageable);
+		Page<ProductEntity> pageProducts = productRepository.findByCategoryEntityCodeCategory(codeCategory, pageable);
 
 		List<ProductEntity> lstProduct = pageProducts.getContent();
 		List<ProductDTO> dtosProduct = lstProduct.stream().map(pr -> modelMapper.map(pr, ProductDTO.class))
@@ -162,9 +160,9 @@ public class ProductServiceImp implements ProductService {
 				.orElseThrow(() -> new EntityNotFoundException(
 						"Product  : " + idProduct + " not found in our data base try again",
 						ErrorsCodeEnumeration.PRODUCT_NOT_FOUND));
-			// check if product exist with designation
-		if(!findProductInOurDB.getDesignation().equalsIgnoreCase(dto.getDesignation())) {	
-		Optional<ProductEntity> ifExistProduct = productRepository
+		// check if product exist with designation
+		if (!findProductInOurDB.getDesignation().equalsIgnoreCase(dto.getDesignation())) {
+			Optional<ProductEntity> ifExistProduct = productRepository
 					.findByDesignationIgnoreCase(dto.getDesignation());
 			if (ifExistProduct.isPresent()) {
 				log.error("Product exist with : ` {} ` in our data base try again!!", dto.getDesignation());
@@ -188,18 +186,20 @@ public class ProductServiceImp implements ProductService {
 
 	@Override
 	public void reduceQuantite(Long idProduct, int quantity) {
-		log.info("Inside mehtode reduceQuantite of ProductuServiceImp  Product Id : {} , Quantite :{} ",idProduct,quantity);
+		log.info("Inside mehtode reduceQuantite of ProductuServiceImp  Product Id : {} , Quantite :{} ", idProduct,
+				quantity);
 		ProductEntity findProduct = productRepository.findById(idProduct)
 				.orElseThrow(() -> new EntityNotFoundException(
 						"Product with id : `" + idProduct + "` not found in our data base try again",
 						ErrorsCodeEnumeration.PRODUCT_NOT_FOUND));
-		
-	    if(findProduct.getQuantiteStock()<quantity) {
-	    	throw new InvalidEntityException("Product does not have sufficient qunaty",ErrorsCodeEnumeration.PRODUCT_INSUFFICIENT_QUANTITE);
-	    }
-	    findProduct.setQuantiteStock(findProduct.getQuantiteStock()-quantity);
-	    productRepository.saveAndFlush(findProduct);
-	    log.info("Product Quantity updated successfully product : {} ", findProduct.toString());
+
+		if (findProduct.getQuantiteStock() < quantity) {
+			throw new ProductServiceCustomException("Product does not have sufficient quantity",
+					ErrorsCodeEnumeration.PRODUCT_INSUFFICIENT_QUANTITE);
+		}
+		findProduct.setQuantiteStock(findProduct.getQuantiteStock() - quantity);
+		productRepository.saveAndFlush(findProduct);
+		log.info("Product Quantity updated successfully product : {} ", findProduct.toString());
 	}
 
 }

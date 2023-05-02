@@ -4,8 +4,6 @@ import java.util.List;
 
 import com.arcesi.ProductService.dtos.ProductDTO;
 
-import jakarta.validation.constraints.Positive;
-
 public interface ProductService {
 
 	List<ProductDTO> getAllProductByDesignationContaining(String partialDesignation, int page, int limit);

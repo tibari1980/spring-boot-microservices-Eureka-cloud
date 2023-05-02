@@ -14,10 +14,10 @@ import com.arcesi.ProductService.exceptions.ArgumentNotValidException;
 import com.arcesi.ProductService.exceptions.ArgumentNotValideEntityException;
 import com.arcesi.ProductService.exceptions.EntityNotFoundException;
 import com.arcesi.ProductService.exceptions.InvalidEntityException;
+import com.arcesi.ProductService.exceptions.ProductServiceCustomException;
 import com.arcesi.ProductService.utils.IUtils;
 
 import jakarta.validation.ConstraintViolationException;
-
 
 @RestControllerAdvice
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
@@ -27,8 +27,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(EntityNotFoundException.class)
 	public ResponseEntity<ErrorsNotFoundDTO> exceptionHandler(EntityNotFoundException exception, WebRequest request) {
 		final HttpStatus httpStatusNotFound = HttpStatus.NOT_FOUND;
-		ErrorsNotFoundDTO dto = ErrorsNotFoundDTO.builder().codeEnum(exception.getCodeErrors()).httpCode(httpStatusNotFound.value())
-				.message(exception.getMessage()).timeStamp(IUtils.afficheDateFormatter()).build();
+		ErrorsNotFoundDTO dto = ErrorsNotFoundDTO.builder().codeEnum(exception.getCodeErrors())
+				.httpCode(httpStatusNotFound.value()).message(exception.getMessage())
+				.timeStamp(IUtils.afficheDateFormatter()).build();
 
 		return new ResponseEntity<ErrorsNotFoundDTO>(dto, httpStatusNotFound);
 	}
@@ -36,60 +37,60 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 	@ExceptionHandler(InvalidEntityException.class)
 	public ResponseEntity<ErrorsDTO> exceptionHandler(InvalidEntityException exception, WebRequest request) {
 		final HttpStatus badhHttpStatus = HttpStatus.BAD_REQUEST;
-		ErrorsDTO dto = ErrorsDTO.builder()
+		ErrorsDTO dto = ErrorsDTO.builder().codeEnum(exception.getErrorEnum()).httpCode(badhHttpStatus.value())
+				.message(exception.getMessage()).lstErrors(exception.getLstErrors())
+				.timeStamp(IUtils.afficheDateFormatter()).build();
+
+		return new ResponseEntity<ErrorsDTO>(dto, badhHttpStatus);
+	}
+
+	@ExceptionHandler(ProductServiceCustomException.class)
+	public ResponseEntity<ErrorsDtoMessage> exceptionHandler(ProductServiceCustomException exception, WebRequest request) {
+		final HttpStatus badhHttpStatus = HttpStatus.BAD_REQUEST;
+
+		ErrorsDtoMessage dto = ErrorsDtoMessage.builder()
 				.codeEnum(exception.getErrorEnum())
 				.httpCode(badhHttpStatus.value())
 				.message(exception.getMessage())
-				//lstErrors(exception.getLstErrors())
-				.lstErrors(exception.getLstErrors())
 				.timeStamp(IUtils.afficheDateFormatter()).build();
-		 
-		return new ResponseEntity<ErrorsDTO>(dto, badhHttpStatus);
+		return new ResponseEntity<ErrorsDtoMessage>(dto, badhHttpStatus);
 	}
-	
+
 	@ExceptionHandler(ArgumentNotValidException.class)
 	public ResponseEntity<MessageErrorDTO> exceptionHandler(ArgumentNotValidException exception, WebRequest request) {
 		final HttpStatus badhHttpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-		MessageErrorDTO dto = MessageErrorDTO.builder().codeEnum(exception.getErrorEnum()).httpCode(badhHttpStatus.value())
-				.message(exception.getMessage())
+		MessageErrorDTO dto = MessageErrorDTO.builder().codeEnum(exception.getErrorEnum())
+				.httpCode(badhHttpStatus.value()).message(exception.getMessage())
 				.timeStamp(IUtils.afficheDateFormatter()).build();
 		return new ResponseEntity<MessageErrorDTO>(dto, badhHttpStatus);
 	}
-	
+
 	@ExceptionHandler(Exception.class)
-	public ResponseEntity<MessageErrorDTO> exceptionHandler(MissingPathVariableException exception, WebRequest request) {
+	public ResponseEntity<MessageErrorDTO> exceptionHandler(MissingPathVariableException exception,
+			WebRequest request) {
 		final HttpStatus badhHttpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-		MessageErrorDTO dto = MessageErrorDTO.builder()
-				.httpCode(badhHttpStatus.value())
-				.message(exception.getMessage())
+		MessageErrorDTO dto = MessageErrorDTO.builder().httpCode(badhHttpStatus.value()).message(exception.getMessage())
 				.timeStamp(IUtils.afficheDateFormatter()).build();
 		return new ResponseEntity<MessageErrorDTO>(dto, badhHttpStatus);
 	}
-	
+
 	@ExceptionHandler(ArgumentNotValideEntityException.class)
-	public ResponseEntity<MessageErrorsValidationDTO> exceptionHandler(ArgumentNotValideEntityException exception, WebRequest request) {
+	public ResponseEntity<MessageErrorsValidationDTO> exceptionHandler(ArgumentNotValideEntityException exception,
+			WebRequest request) {
 		final HttpStatus badhHttpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-		MessageErrorsValidationDTO dto = MessageErrorsValidationDTO.builder()
-				.httpCode(badhHttpStatus.value())
-				.message(exception.getMessage())
-				.mapsErrors(exception.getLstErrors())
-				.timeStamp(IUtils.afficheDateFormatter())
-				.build();
+		MessageErrorsValidationDTO dto = MessageErrorsValidationDTO.builder().httpCode(badhHttpStatus.value())
+				.message(exception.getMessage()).mapsErrors(exception.getLstErrors())
+				.timeStamp(IUtils.afficheDateFormatter()).build();
 		return new ResponseEntity<MessageErrorsValidationDTO>(dto, badhHttpStatus);
 	}
-	 
-	
-	 
+
 	@ExceptionHandler(ConstraintViolationException.class)
-	public ResponseEntity<MessageErrorDTO> constraintViolationException(ConstraintViolationException exception,WebRequest request){
-		HttpStatus badRequest=HttpStatus.BAD_REQUEST;
-		final MessageErrorDTO dto=MessageErrorDTO.builder()
-				.message(exception.getMessage())
-				.httpCode(badRequest.value())
-				.timeStamp(IUtils.afficheDateFormatter())
-				.build();
-		 return new ResponseEntity<MessageErrorDTO>(dto,badRequest);
+	public ResponseEntity<MessageErrorDTO> constraintViolationException(ConstraintViolationException exception,
+			WebRequest request) {
+		HttpStatus badRequest = HttpStatus.BAD_REQUEST;
+		final MessageErrorDTO dto = MessageErrorDTO.builder().message(exception.getMessage())
+				.httpCode(badRequest.value()).timeStamp(IUtils.afficheDateFormatter()).build();
+		return new ResponseEntity<MessageErrorDTO>(dto, badRequest);
 	}
-	
-	
+
 }
