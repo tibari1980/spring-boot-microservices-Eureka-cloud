@@ -26,7 +26,7 @@ import com.arcesi.ProductService.services.CategoryService;
 
 import lombok.extern.slf4j.Slf4j;
 
-@CrossOrigin(origins = "http://localhost:8086")
+
 @RestController
 @RequestMapping(value = "/api/v1/categories/")
 @Slf4j

@@ -10,8 +10,12 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="LOOSE"/>
+		<item key="selection" value="web"/>
 		<list key="findhistory">
+			<item value="web"/>
+			<item value="zip"/>
+			<item value="400"/>
+			<item value="public Exception decode(String methodKey, Response response) {"/>
 			<item value="LOOSE"/>
 			<item value="serialVersionUID"/>
 		</list>

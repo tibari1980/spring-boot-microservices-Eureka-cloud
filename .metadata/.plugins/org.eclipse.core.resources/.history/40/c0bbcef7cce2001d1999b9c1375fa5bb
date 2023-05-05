@@ -1,5 +1,0 @@
-package com.arcesi.orderservice.entities;
-
-public class AbstractEntity {
-
-}

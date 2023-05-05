@@ -20,4 +20,12 @@ public class ApiRessourceExterneExceptionHanlder extends ResponseEntityException
 				.message(exception.getMessage()).timeStamp(IUtils.afficheDateFormatter()).build();
 		return new ResponseEntity<ErrorsDTO>(dto, badrequest);
 	}
+	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorsDTO> handelExceptionProduct(Exception exception, WebRequest request) {
+		final HttpStatus badrequest = HttpStatus.BAD_REQUEST;
+		ErrorsDTO dto = ErrorsDTO.builder().httpCode(badrequest.value())
+				.message(exception.getMessage()).timeStamp(IUtils.afficheDateFormatter()).build();
+		return new ResponseEntity<ErrorsDTO>(dto, badrequest);
+	}
 }

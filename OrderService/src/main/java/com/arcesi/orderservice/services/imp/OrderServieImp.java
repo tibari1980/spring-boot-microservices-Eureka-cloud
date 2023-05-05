@@ -17,8 +17,10 @@ import com.arcesi.orderservice.enums.ErrorsCodeEnumeration;
 import com.arcesi.orderservice.enums.EtatOrder;
 import com.arcesi.orderservice.exceptions.EntityNotFoundException;
 import com.arcesi.orderservice.exceptions.InvalidEntityException;
+import com.arcesi.orderservice.external.client.PaymentServiceProxy;
 import com.arcesi.orderservice.external.client.ProductServiceProxy;
 import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+import com.arcesi.orderservice.external.client.requests.TransactionDetailsRequest;
 import com.arcesi.orderservice.repositories.ClientRepository;
 import com.arcesi.orderservice.repositories.OrderRepository;
 import com.arcesi.orderservice.services.OrderService;
@@ -41,6 +43,9 @@ public class OrderServieImp implements OrderService {
 
 	@Autowired
 	private ProductServiceProxy productService;
+	
+	@Autowired
+	private PaymentServiceProxy paymentServiceProxy;
 
 	@Autowired
 	private ObjectValidators<OrderDTO> orderValidators;
@@ -70,7 +75,31 @@ public class OrderServieImp implements OrderService {
 		orderDto.setStatusOrder(EtatOrder.CREATED.getCode());
 		orderDto.setMontantOrder(orderDto.getQuantiteOrder() * product.getPrix());
 		orderDto.setClientDTO(modelMapper.map(ifClientExist, ClientDTO.class));
-		return modelMapper.map(orderRepository.save(modelMapper.map(orderDto, OrderEntity.class)), OrderDTO.class);
+		//Saving order
+		OrderEntity orderEntity=orderRepository.save(modelMapper.map(orderDto, OrderEntity.class));
+		
+		log.info("Calling payment to complete Payment......... ");
+		TransactionDetailsRequest transactionDetailsRequest=TransactionDetailsRequest.builder()
+				.orderId(orderEntity.getCodeOrder())
+				.paymentMode(orderDto.getPaymentMode())
+				.referenceNumber(UUID.randomUUID().toString())
+				.amountOrder(orderEntity.getMontantOrder())
+				.build();
+		@SuppressWarnings("unused")
+		String orderStatus=null;
+		try {
+			paymentServiceProxy.doPayment(transactionDetailsRequest);
+			log.info("Payment done successfully.Changing the oder status to placed");
+			orderStatus="PLACED";
+		}catch(Exception e) {
+			log.error("Error occured in payment.Changing order status to Failed");
+			orderStatus="PAYMENT_FAILED";
+		}
+		//Changing order status 
+		orderEntity.setStatusOrder(orderStatus);
+		orderRepository.saveAndFlush(orderEntity);
+		log.info("Order Created successfully order : {}",orderEntity.toString());
+		return modelMapper.map(orderEntity, OrderDTO.class);
 	}
 
 }

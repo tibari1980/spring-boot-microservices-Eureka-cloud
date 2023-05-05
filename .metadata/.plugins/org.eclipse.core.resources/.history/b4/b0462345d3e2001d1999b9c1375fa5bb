@@ -1,5 +1,0 @@
-package com.arcesi.orderservice.repositories;
-
-public interface OrderRepository {
-
-}

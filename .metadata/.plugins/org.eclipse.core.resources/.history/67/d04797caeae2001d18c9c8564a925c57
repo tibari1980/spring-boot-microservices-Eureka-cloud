@@ -1,5 +1,0 @@
-package com.arcesi.orderservice.enums;
-
-public enum ErrorsCodeEnumeration {
-
-}

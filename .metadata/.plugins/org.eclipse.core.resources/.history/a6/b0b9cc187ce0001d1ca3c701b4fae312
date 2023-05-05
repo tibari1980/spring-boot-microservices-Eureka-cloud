@@ -1,5 +1,0 @@
-package com.arcesi.ProductService.exceptions;
-
-public class ArgumentNotValideEntityException  extends RuntimeException{
-
-}

@@ -1,7 +1,0 @@
-server.port=9001
-
-#Eureka server client
-eureka.client.registerWithEureka=true
-eureka.client.fetchRegistry=true
-eureka.client.serviceUrlDefaultZone = http://127.0.0.1:9002/eureka/
-eureka.instance.hostname=localhost

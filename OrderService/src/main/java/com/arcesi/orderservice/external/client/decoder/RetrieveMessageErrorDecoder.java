@@ -40,6 +40,10 @@ public class RetrieveMessageErrorDecoder implements ErrorDecoder {
 			throw new RessourceNotFoundException(dto.getMessage(), dto.getCodeEnum());
 		case 404:
 			throw new RessourceNotFoundException(dto.getMessage(), dto.getCodeEnum());
+		case 500:
+			throw new RessourceNotFoundException("Internal Server Error","INTERNAL_ERROR_SERVER");
+		case 503:
+			throw new RessourceNotFoundException("Internal Server Error","INTERNAL_ERROR_SERVER");
 		default:
 			return errorDecoder.decode(methodKey, response);
 		}
