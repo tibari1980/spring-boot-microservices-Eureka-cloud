@@ -18,9 +18,9 @@ public class JeuDDTest implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < 1; i++) {
 			TransactionDetails bean = TransactionDetails.builder().referenceNumber(UUID.randomUUID().toString())
-					.amountOrder(i + 5 * 20).payementDate(Instant.now()).paymentMode("CREDIT_CARD")
+					.amountOrder(2500).payementDate(Instant.now()).paymentMode("CREDIT_CARD")
 					.paymentStatus("VALIDEE").orderId(i + 1)
 					.build();
 

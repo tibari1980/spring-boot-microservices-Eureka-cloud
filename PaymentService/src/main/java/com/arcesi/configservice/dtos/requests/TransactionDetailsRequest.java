@@ -1,7 +1,5 @@
 package com.arcesi.configservice.dtos.requests;
 
-import com.arcesi.configservice.enums.PaymentModeEnum;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
