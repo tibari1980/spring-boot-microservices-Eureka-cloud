@@ -1,0 +1,69 @@
+package com.arcesi.orderservice.dtos.responses;
+
+import java.io.Serializable;
+import java.time.Instant;
+
+import com.arcesi.orderservice.dtos.ClientDTO;
+import com.arcesi.orderservice.external.client.dtos.AbstractEntityResponse;
+import com.arcesi.orderservice.external.client.dtos.CategoryResponse;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+
+@EqualsAndHashCode
+@ToString
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrderResponse implements Serializable{
+
+
+
+	private static final long serialVersionUID = 1L;
+	private Long codeOrder;
+	private String uidOrder;
+	private Long idProduct;
+	private String statusOrder;
+	private Instant dateOrder;
+	private int quantiteOrder;
+	private double montantOrder;
+	private String paymentMode;
+	private ClientDTO clientDTO;
+	
+    
+
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+@Data
+@SuperBuilder
+@NoArgsConstructor
+public static class ProductResponse extends AbstractEntityResponse {
+
+	private static final long serialVersionUID = 1L;
+
+	private Long codeProduct;
+	private String uidProduct;
+	private String designation;
+	private String description;
+	private double prix;
+	private int quantiteStock;
+
+	private Boolean isDisponible;
+	private Boolean isEnPromotion;
+	private String photo;
+
+	private CategoryResponse categoryResponse;
+}
+
+
+}

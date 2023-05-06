@@ -39,6 +39,6 @@ public class OrderDTO implements Serializable {
 	@NotBlank(message = "Payement mode is mandatory.")
 	private String paymentMode;
 	
-	private ProductResponse productResponse;
+	private ProductResponse productDetails;
 
 }

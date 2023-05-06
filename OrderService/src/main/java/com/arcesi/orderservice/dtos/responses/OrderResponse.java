@@ -5,6 +5,7 @@ import java.time.Instant;
 
 import com.arcesi.orderservice.dtos.ClientDTO;
 import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,6 +30,7 @@ public class OrderResponse implements Serializable{
 	private static final long serialVersionUID = 1L;
 	private Long codeOrder;
 	private String uidOrder;
+	@JsonIgnore
 	private Long idProduct;
 	private String statusOrder;
 	private Instant dateOrder;
@@ -38,7 +40,7 @@ public class OrderResponse implements Serializable{
 	private ClientDTO clientDTO;
 	
 
-	private ProductResponse productResponse;
+	private ProductResponse productDetails;
 
 
 

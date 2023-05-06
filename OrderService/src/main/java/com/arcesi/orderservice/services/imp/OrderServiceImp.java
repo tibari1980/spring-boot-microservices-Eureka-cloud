@@ -113,7 +113,7 @@ public class OrderServiceImp implements OrderService {
 		ProductResponse productResponse=
 				  restTemplate.getForObject("http://PRODUCT-SERVICE/api/v1/products/findById/"+bean.getIdProduct(), ProductResponse.class);
 		OrderDTO dtoOrderDetails=modelMapper.map(bean,OrderDTO.class);
-		dtoOrderDetails.setProductResponse(productResponse);
+		dtoOrderDetails.setProductDetails(productResponse);
 		
 		return dtoOrderDetails;
 	}
