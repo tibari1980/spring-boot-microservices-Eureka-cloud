@@ -1,7 +1,5 @@
 package com.arcesi.orderservice.external.client.requests;
 
-import com.arcesi.orderservice.enums.PaymentModeEnum;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -24,10 +24,8 @@ public class JeuDDTest implements CommandLineRunner {
 					.paymentStatus("VALIDEE").orderId(i + 1)
 					.build();
 
-			detailsRepository.save(bean);
+			//detailsRepository.save(bean);
 		}
-
-		System.out.println("hello fin test ");
 	}
 
 }

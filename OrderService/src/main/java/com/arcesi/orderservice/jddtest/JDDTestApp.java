@@ -24,7 +24,7 @@ public class JDDTestApp implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 150; i++) {
 			ClientEntity client = ClientEntity.builder()
 					.uidClient(UUID.randomUUID().toString()).dateNaissanceClient(new Date())
 					.email("tibarinewdzigh" + i + "@gmail.com").nomClient("tibari" + i).prenomClient("zeroual" + i)
@@ -32,7 +32,7 @@ public class JDDTestApp implements CommandLineRunner {
 					.telephoneClient("0625491640")
 					.adressePostaleClient("1" + i + " place des alpes 78280 Guyancout").build();
 
-			ClientEntity clientSaved = clientRepository.save(client);
+			//ClientEntity clientSaved = clientRepository.save(client);
 			OrderEntity order = OrderEntity.builder()
 					 
 				 
@@ -42,9 +42,10 @@ public class JDDTestApp implements CommandLineRunner {
 					.quantiteOrder((i % 2 != 0) ? 1 + 4 : 1 + 3)
 					.paymentMode("CASH")
 					.statusOrder("VALIDEE")
-					.clientEntity(clientSaved).build();
+					//.clientEntity(clientSaved)
+					.build();
 
-			orderRepository.save(order);
+			//orderRepository.save(order);
 		}
 
 	}

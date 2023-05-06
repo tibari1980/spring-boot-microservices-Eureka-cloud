@@ -14,6 +14,7 @@ import jakarta.validation.constraints.Positive;
 public interface ApiRestClient {
 	
 	@PostMapping(value="{idClient}/orders",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<OrderResponse> createOrder(@RequestBody final OrderRequest orderRequest,@PathVariable(name = "idClient") @Positive (message="Client Id must be greater than zero.") Long idClient);
+	public ResponseEntity<OrderResponse> createOrder(@RequestBody final OrderRequest orderRequest,
+			@PathVariable(name = "idClient") @Positive(message = "Client Id must be greater than zero.") Long idClient);
 
 }
