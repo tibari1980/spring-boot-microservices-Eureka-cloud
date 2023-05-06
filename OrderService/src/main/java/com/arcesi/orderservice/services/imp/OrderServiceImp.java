@@ -8,6 +8,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import com.arcesi.orderservice.dtos.ClientDTO;
 import com.arcesi.orderservice.dtos.OrderDTO;
@@ -33,6 +34,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class OrderServiceImp implements OrderService {
 
+	@Autowired
+	private RestTemplate restTemplate;
 	@Autowired
 	private OrderRepository orderRepository;
 	@Autowired
@@ -106,7 +109,13 @@ public class OrderServiceImp implements OrderService {
 	public OrderDTO getOneOrderById(Long idOrder) {
 		log.info("Inside methode getOneOrderById of OrderServiceImp  id : {} ",idOrder);
 		OrderEntity bean=orderRepository.findById(idOrder).orElseThrow(()->new EntityNotFoundException("Order  with  : "+idOrder+ " does not exist in our data base ",ErrorsCodeEnumeration.ORDER_NOT_FOUND));
-		return modelMapper.map(bean, OrderDTO.class);
+		log.info("Invoking Product Service to  fetch producut for  product id  : ", bean.getIdProduct());
+		ProductResponse productResponse=
+				  restTemplate.getForObject("http://PRODUCT-SERVICE/api/v1/products/findById/"+bean.getIdProduct(), ProductResponse.class);
+		OrderDTO dtoOrderDetails=modelMapper.map(bean,OrderDTO.class);
+		dtoOrderDetails.setProductResponse(productResponse);
+		
+		return dtoOrderDetails;
 	}
 
 	@Override

@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.Instant;
 
 import com.arcesi.orderservice.dtos.ClientDTO;
+import com.arcesi.orderservice.external.client.dtos.ProductResponse;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -36,6 +37,10 @@ public class OrderResponse implements Serializable{
 	private String paymentMode;
 	private ClientDTO clientDTO;
 	
+
+	private ProductResponse productResponse;
+
+
 
 
 }

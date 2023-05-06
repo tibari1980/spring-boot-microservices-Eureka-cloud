@@ -3,6 +3,8 @@ package com.arcesi.orderservice.dtos;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -36,5 +38,7 @@ public class OrderDTO implements Serializable {
 	private ClientDTO clientDTO;
 	@NotBlank(message = "Payement mode is mandatory.")
 	private String paymentMode;
+	
+	private ProductResponse productResponse;
 
 }
