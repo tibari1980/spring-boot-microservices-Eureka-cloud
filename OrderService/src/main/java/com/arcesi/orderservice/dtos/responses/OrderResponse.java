@@ -5,6 +5,8 @@ import java.time.Instant;
 
 import com.arcesi.orderservice.dtos.ClientDTO;
 import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+import com.arcesi.orderservice.external.client.dtos.TransactionDetailsDTO;
+import com.arcesi.orderservice.external.client.dtos.TransactionDetailsResponse;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -41,6 +43,7 @@ public class OrderResponse implements Serializable{
 	
 
 	private ProductResponse productDetails;
+	private TransactionDetailsResponse transactionDetails;
 
 
 

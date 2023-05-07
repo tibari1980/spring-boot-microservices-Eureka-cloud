@@ -23,14 +23,14 @@ public class TransactionDetailsDTO {
 	@Min(value = 1, message = "Order should not be less than 1 .")
  	private long orderId;
 	@NotBlank(message = "Payment mode must not be empty.")
- 	private String paymentMode;
+ 	private String modePayment;
 	@NotBlank(message = "Reference number must not be empty.")
  	private String referenceNumber;
  	private Instant payementDate;
- 	private String paymentStatus;
+ 	private String statusPayment;
  	@Min(value = 1, message = "Amount  should not be less than 1 .")
 	@Max(value = 5000,message="Amount should not be greater than 50000")
- 	private double amountOrder;
+ 	private double orderAmount;
  	private Instant updatedAt;
 	
 }

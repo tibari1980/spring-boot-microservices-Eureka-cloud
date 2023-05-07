@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arcesi.configservice.controllers.ApiRestPayment;
 import com.arcesi.configservice.dtos.TransactionDetailsDTO;
 import com.arcesi.configservice.dtos.requests.TransactionDetailsRequest;
+import com.arcesi.configservice.dtos.responses.TransactionDetailsResponse;
 import com.arcesi.configservice.services.PaymentService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -32,6 +33,17 @@ public class RestPaymentController implements ApiRestPayment {
 		TransactionDetailsDTO dtoTransaction = paymentService
 				.doPayment(mapper.map(paymentRequest, TransactionDetailsDTO.class));
 		return new ResponseEntity<Long>(dtoTransaction.getCode(), HttpStatus.CREATED);
+	}
+
+	@Override
+	public ResponseEntity<TransactionDetailsResponse> getPaymentDetailsByOrderId(Long idOrder) {
+		log.info("Inside methode getPaymentDetailsByOrderId of RestPaymentController idOrder : {} ",idOrder);
+		if(null==idOrder) {
+			log.error("IdOrder cannot be null");
+			return null;
+		}
+		TransactionDetailsDTO dto=paymentService.getPaymentDetailsByOrderId(idOrder);
+		return new ResponseEntity<TransactionDetailsResponse>(mapper.map(dto,TransactionDetailsResponse.class),HttpStatus.OK);
 	}
 
 }

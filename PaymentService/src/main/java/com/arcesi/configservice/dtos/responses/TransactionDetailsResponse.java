@@ -17,11 +17,11 @@ public class TransactionDetailsResponse {
 
 	private Long code;
 	private long orderId;
-	private String paymentMode;
+	private String modePayment;
 	private String referenceNumber;
 	private Instant payementDate;
-	private String paymentStatus;
-	private double amountOrder;
+	private String statusPayment;
+	private double orderAmount;
 	private Instant updatedAt;
 
 }

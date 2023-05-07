@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.time.Instant;
 
 import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+import com.arcesi.orderservice.external.client.dtos.TransactionDetailsDTO;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -32,7 +33,7 @@ public class OrderDTO implements Serializable {
 	private String statusOrder;
 	@NotNull
 	private Instant dateOrder;
-	@Min(value = 1, message = "Quantite order should be not  less 1 euro")
+	@Min(value = 1, message = "Quantite order should be not  less 1 piece")
 	private int quantiteOrder;
 	private double montantOrder;
 	private ClientDTO clientDTO;
@@ -40,5 +41,6 @@ public class OrderDTO implements Serializable {
 	private String paymentMode;
 	
 	private ProductResponse productDetails;
+	private TransactionDetailsDTO transactionDetails;
 
 }

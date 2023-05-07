@@ -21,6 +21,8 @@ import com.arcesi.orderservice.exceptions.InvalidEntityException;
 import com.arcesi.orderservice.external.client.PaymentServiceProxy;
 import com.arcesi.orderservice.external.client.ProductServiceProxy;
 import com.arcesi.orderservice.external.client.dtos.ProductResponse;
+import com.arcesi.orderservice.external.client.dtos.TransactionDetailsDTO;
+import com.arcesi.orderservice.external.client.dtos.TransactionDetailsResponse;
 import com.arcesi.orderservice.external.client.requests.TransactionDetailsRequest;
 import com.arcesi.orderservice.repositories.ClientRepository;
 import com.arcesi.orderservice.repositories.OrderRepository;
@@ -84,9 +86,9 @@ public class OrderServiceImp implements OrderService {
 		log.info("Calling payment to complete Payment......... ");
 		TransactionDetailsRequest transactionDetailsRequest=TransactionDetailsRequest.builder()
 				.orderId(orderEntity.getCodeOrder())
-				.paymentMode(orderDto.getPaymentMode())
+				.modePayment(orderDto.getPaymentMode())
 				.referenceNumber(UUID.randomUUID().toString())
-				.amountOrder(orderEntity.getMontantOrder())
+				.orderAmount(orderEntity.getMontantOrder())
 				.build();
 		@SuppressWarnings("unused")
 		String orderStatus=null;
@@ -109,11 +111,18 @@ public class OrderServiceImp implements OrderService {
 	public OrderDTO getOneOrderById(Long idOrder) {
 		log.info("Inside methode getOneOrderById of OrderServiceImp  id : {} ",idOrder);
 		OrderEntity bean=orderRepository.findById(idOrder).orElseThrow(()->new EntityNotFoundException("Order  with  : "+idOrder+ " does not exist in our data base ",ErrorsCodeEnumeration.ORDER_NOT_FOUND));
-		log.info("Invoking Product Service to  fetch producut for  product id  : ", bean.getIdProduct());
+		log.info("Invoking Product Service to  fetch producut for  product id  :  {}  ", bean.getIdProduct());
 		ProductResponse productResponse=
 				  restTemplate.getForObject("http://PRODUCT-SERVICE/api/v1/products/findById/"+bean.getIdProduct(), ProductResponse.class);
+		
+		log.info("Invoking Payment service to fetch details transacrtion for order id : {} ",bean.getCodeOrder());
+		
+		TransactionDetailsResponse transactionDetailsResponse=
+				    restTemplate.getForObject("http://PAYMENT-SERVICE/api/v1/payments/getPaymentByOrderId/"+bean.getCodeOrder(), TransactionDetailsResponse.class);
+		modelMapper.getConfiguration().setAmbiguityIgnored(true);
 		OrderDTO dtoOrderDetails=modelMapper.map(bean,OrderDTO.class);
 		dtoOrderDetails.setProductDetails(productResponse);
+		dtoOrderDetails.setTransactionDetails(modelMapper.map(transactionDetailsResponse, TransactionDetailsDTO.class));
 		
 		return dtoOrderDetails;
 	}

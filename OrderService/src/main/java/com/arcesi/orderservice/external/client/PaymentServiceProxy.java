@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.arcesi.orderservice.external.client.requests.TransactionDetailsRequest;
 
 
-@FeignClient(name="payment-service//api/v1/payments")
+@FeignClient(name="payment-service/api/v1/payments")
 public interface PaymentServiceProxy {
 
 	

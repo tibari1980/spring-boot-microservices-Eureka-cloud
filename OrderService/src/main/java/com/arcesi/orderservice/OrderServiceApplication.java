@@ -20,6 +20,7 @@ public class OrderServiceApplication {
 	@Bean
 	public ModelMapper modelMapper() {
 		ModelMapper mapper=new ModelMapper();
+		mapper.getConfiguration().setAmbiguityIgnored(true);
 		mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.LOOSE);
 		return mapper;
 	}

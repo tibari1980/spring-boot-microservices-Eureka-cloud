@@ -6,4 +6,6 @@ public interface PaymentService {
 
 	TransactionDetailsDTO doPayment(final TransactionDetailsDTO map);
 
+	TransactionDetailsDTO getPaymentDetailsByOrderId( final Long idOrder);
+
 }

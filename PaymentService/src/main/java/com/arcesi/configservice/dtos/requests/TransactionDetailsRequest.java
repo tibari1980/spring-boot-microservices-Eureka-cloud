@@ -14,8 +14,8 @@ import lombok.ToString;
 public class TransactionDetailsRequest {
 
 	private long orderId;
-	private String paymentMode;
+	private String modePayment;
 	private String referenceNumber;
-	private double amountOrder;
+	private double orderAmount;
 
 }

@@ -35,15 +35,15 @@ public class TransactionDetails {
 	@Column(name="ORDER_ID",nullable = false,insertable = true,updatable = true)
 	private long orderId;
 	@Column(name="PAYMENT_MODE",insertable = true,nullable = false)
-	private String paymentMode;
+	private String modePayment;
 	@Column(name="REFERENCE_NUMBER",insertable = true,nullable = false)
 	private String referenceNumber;
 	@Column(name="PAYMENT_DATE",insertable = true,updatable = true)
 	private Instant payementDate;
 	@Column(name="PAYMENT_STATUS",insertable = true,updatable = true)
-	private String paymentStatus;
+	private String statusPayment;
 	@Column(name="AMOUNT")
-	private double amountOrder;
+	private double orderAmount;
 	@LastModifiedDate
 	@Column(name="UPDATED_AT",insertable = true,updatable = true,nullable = true)
 	private Instant updatedAt;
