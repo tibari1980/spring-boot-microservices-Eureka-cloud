@@ -94,8 +94,8 @@ public class CategoryServiceImpl implements CategoryService {
 		Map<String, String> violations = validatorCat.validate(categoryDto);
 		if (!violations.isEmpty()) {
 
-			log.error("There are errors while saving product try again ! ", violations);
-			throw new ArgumentNotValideEntityException("There are errors while saving product try again !!!",
+			log.error("There are errors while saving category try again ! ", violations);
+			throw new ArgumentNotValideEntityException("There are errors while saving category try again !!!",
 					ErrorsCodeEnumeration.PRODUCT_NOT_FOUND, violations);
 		}
 

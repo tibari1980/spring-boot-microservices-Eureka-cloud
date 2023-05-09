@@ -37,7 +37,6 @@ public class ProductDTO extends AbstractEntityDTO {
 	
 	@Min(value = 1, message = "Price should not be less than 1 .")
 	@Max(value = 5000,message="Price should not be greater than 5000")
-	@DecimalMin("1.00")
 	private double prix;
 	
 	@Min(value = 0, message = "Quantite should not be less than 0")
@@ -47,7 +46,7 @@ public class ProductDTO extends AbstractEntityDTO {
 	private Boolean isDisponible;
 	private Boolean isEnPromotion;
 	
-	@NotBlank(message = "Phto must not be empty.")
+	@NotBlank(message = "Photo must not be empty.")
 	private String photo;
 	private CategoryDTO categoryDTO;
 
