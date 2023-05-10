@@ -3204,3 +3204,244 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.springfra
 2023-05-09 23:22:34,964 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
 2023-05-09 23:22:34,968 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
 2023-05-09 23:22:34,971 [Worker-202: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 13:17:53,357 [Worker-7: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2023-05-10 15:32:33,032 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 15:32:33,272 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 15:32:33,280 [Worker-26: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 15:50:39,947 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 15:50:40,464 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 15:50:40,478 [Worker-28: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 15:52:01,696 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 15:52:01,721 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 15:52:01,739 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 15:52:38,683 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 15:52:39,109 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 15:52:39,125 [Worker-31: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 15:53:06,158 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 15:53:07,024 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 15:53:07,037 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 16:10:04,597 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:10:04,647 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:10:04,663 [Worker-29: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 16:11:47,185 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:11:47,259 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:11:47,267 [Worker-15: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 16:15:06,489 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:15:06,535 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:15:06,542 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 16:15:58,228 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:15:58,233 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:15:58,238 [Worker-18: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 16:18:07,262 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:18:07,287 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:18:07,296 [Worker-20: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:18:14,945 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:18:14,951 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:18:14,955 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:18:49,332 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:18:49,338 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:18:49,343 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:19:24,169 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:19:24,174 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:19:24,179 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:20:59,225 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:20:59,251 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:20:59,263 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:21:16,012 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:21:16,020 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:21:16,027 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:23:40,283 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:23:40,562 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:23:40,566 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:24:02,632 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:24:02,653 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:24:02,656 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:25:39,247 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:25:39,279 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:25:39,284 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:26:31,068 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:26:31,091 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:26:31,099 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:30:00,333 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:30:00,347 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:30:00,353 [Worker-6: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:30:08,916 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:30:08,947 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:30:08,951 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:35:07,878 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:35:07,922 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:35:07,931 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:36:04,650 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:36:04,699 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:36:04,712 [Worker-35: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:40:39,264 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:40:39,303 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:40:39,307 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:40:55,789 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:40:55,795 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:40:55,799 [Worker-38: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:50:07,963 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:50:07,985 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:50:07,997 [Worker-40: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:53:45,669 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:53:45,812 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:53:45,824 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:53:52,761 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:53:52,814 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:53:52,827 [Worker-37: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 16:55:57,200 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:55:57,365 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:55:57,369 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:57:02,921 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:57:02,953 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:57:02,984 [Worker-44: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:57:59,844 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:57:59,871 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:57:59,877 [Worker-41: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:58:49,798 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:58:49,806 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:58:49,811 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 16:59:16,929 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 16:59:16,955 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 16:59:16,960 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:00:04,158 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:00:04,167 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:00:04,171 [Worker-36: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:02:00,892 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:02:00,898 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:02:00,902 [Worker-45: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:03:10,685 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:03:10,705 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:03:10,709 [Worker-46: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:09:06,175 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:09:06,233 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:09:06,238 [Worker-49: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:18:10,092 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:18:10,121 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:18:10,125 [Worker-53: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:29:58,522 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:29:58,554 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:29:58,557 [Worker-57: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:36:17,520 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:36:17,576 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:36:17,594 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:36:45,767 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:36:45,831 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:36:45,838 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:38:24,929 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:38:24,955 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:38:24,968 [Worker-61: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:40:28,611 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:40:28,620 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:40:28,623 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:42:49,363 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:42:49,366 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:42:49,370 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:42:59,164 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:42:59,171 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:42:59,187 [Worker-60: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:43:08,591 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:43:08,595 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:43:08,608 [Worker-59: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:44:58,738 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:44:58,753 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:44:58,755 [Worker-62: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:45:11,819 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:45:11,840 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:45:11,853 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:47:04,009 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:47:04,020 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:47:04,025 [Worker-63: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:47:25,394 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:47:25,397 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:47:25,399 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:57:57,243 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:57:57,273 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:57:57,278 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 17:58:47,419 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 17:58:47,424 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 17:58:47,437 [Worker-11: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:01:57,443 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:01:57,459 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:01:57,463 [Worker-71: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:08:26,526 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:08:26,530 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:08:26,533 [Worker-42: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:08:46,949 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:08:46,967 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:08:46,981 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 18:09:04,907 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:09:04,911 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:09:04,918 [Worker-72: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 18:09:26,813 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:09:26,816 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:09:26,819 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:09:48,284 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:09:48,336 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:09:48,342 [Worker-74: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:16:43,661 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:16:43,705 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:16:43,710 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:17:55,793 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:17:55,807 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:17:55,811 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:19:31,117 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:19:31,129 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:19:31,147 [Worker-75: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:19:42,435 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:19:42,441 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:19:42,446 [Worker-81: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:22:57,885 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:22:57,904 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:22:57,907 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:24:16,382 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:24:16,406 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:24:16,417 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:31:30,272 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:31:30,290 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:31:30,294 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:32:16,680 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:32:16,694 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:32:16,698 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:33:01,802 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:33:01,810 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:33:01,812 [Worker-77: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:33:30,793 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:33:30,827 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:33:30,830 [Worker-82: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:45:30,806 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:30,841 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:45:30,845 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/CloudGateway/src/test/resources
+2023-05-10 18:45:32,081 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:32,185 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 3 resources from src/main/resources to target/classes
+2023-05-10 18:45:32,214 [Worker-79: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ConfigServer/src/test/resources
+2023-05-10 18:45:34,953 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:34,955 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:45:34,962 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 18:45:35,968 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:35,979 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:45:35,982 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/PaymentService/src/test/resources
+2023-05-10 18:45:38,222 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:38,257 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:45:38,262 [Worker-94: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 18:45:40,402 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:45:40,449 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:45:40,457 [Worker-78: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/service-registry/src/test/resources
+2023-05-10 18:50:13,356 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 18:50:13,508 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 18:50:13,515 [Worker-93: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/ProductService/src/test/resources
+2023-05-10 21:36:05,056 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 21:36:05,148 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 21:36:05,152 [Worker-100: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 21:36:50,889 [Worker-103: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 21:36:50,890 [Worker-103: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 21:36:50,893 [Worker-103: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 21:37:11,571 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 21:37:11,576 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 21:37:11,584 [Worker-98: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 21:38:23,697 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 21:38:23,700 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 21:38:23,703 [Worker-85: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/OrderService/src/test/resources
+2023-05-10 21:55:03,942 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src/main/resources to target/classes
+2023-05-10 21:55:03,976 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/main/resources to target/classes
+2023-05-10 21:55:03,980 [Worker-110: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /home/tibari/micro-service-ecommerce/spring-boot-microservices-Eureka-cloud/CloudGateway/src/test/resources

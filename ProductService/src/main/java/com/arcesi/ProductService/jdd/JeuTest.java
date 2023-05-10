@@ -12,7 +12,7 @@ import com.arcesi.ProductService.entities.ProductEntity;
 import com.arcesi.ProductService.repositories.CategoryRepository;
 import com.arcesi.ProductService.repositories.ProductRepository;
 
-//@Component
+@Component
 public class JeuTest implements CommandLineRunner {
 
 	@Autowired
@@ -52,7 +52,7 @@ public class JeuTest implements CommandLineRunner {
 		CategoryEntity catOrdi=categoryRepository.save(ordinateur);
 		CategoryEntity cateLivre=categoryRepository.save(livre);
 		
-		for(int i=0;i<300;i++) {
+		for(int i=0;i<30;i++) {
 			ProductEntity tele=ProductEntity.builder()
 					.uidProduct(UUID.randomUUID().toString())
 					.designation("IPHONE PRO"+i)
@@ -61,7 +61,7 @@ public class JeuTest implements CommandLineRunner {
 					.createdAt(Instant.now())
 					.isDisponible(Boolean.TRUE)
 					.isEnPromotion(Boolean.TRUE)
-					.quantiteStock(i+1 *20)
+					.quantiteStock(i+1 *20+200)
 					.categoryEntity(catTel)
 					.photo("iphonepro"+i+".jpeg")
 					.build();
@@ -75,7 +75,7 @@ public class JeuTest implements CommandLineRunner {
 					.createdAt(Instant.now())
 					.isDisponible(Boolean.TRUE)
 					.isEnPromotion(Boolean.TRUE)
-					.quantiteStock(i+1 *20)
+					.quantiteStock(i+1 *20+20)
 					.categoryEntity(catOrdi)
 					.photo("ordinateurpro"+i+".jpeg")
 					.build();
@@ -89,7 +89,7 @@ public class JeuTest implements CommandLineRunner {
 					.createdAt(Instant.now())
 					.isDisponible(Boolean.TRUE)
 					.isEnPromotion(Boolean.TRUE)
-					.quantiteStock(i+1 *20)
+					.quantiteStock(i+1 *20+200)
 					.categoryEntity(cateLivre)
 					.photo("livre"+i+".jpeg")
 					.build();
@@ -104,7 +104,7 @@ public class JeuTest implements CommandLineRunner {
 					.createdAt(Instant.now())
 					.isDisponible(Boolean.TRUE)
 					.isEnPromotion(Boolean.TRUE)
-					.quantiteStock(i+1 *20)
+					.quantiteStock(i+1 *20+200)
 					.categoryEntity(catFil)
 					.photo("livre"+i+".jpeg")
 					.build();

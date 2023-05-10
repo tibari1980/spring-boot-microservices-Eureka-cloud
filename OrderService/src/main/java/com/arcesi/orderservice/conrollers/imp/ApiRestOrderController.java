@@ -1,8 +1,6 @@
 package com.arcesi.orderservice.conrollers.imp;
 
 import org.modelmapper.ModelMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,14 +21,12 @@ import lombok.extern.slf4j.Slf4j;
 @Validated
 public class ApiRestOrderController implements ApiRestOrder {
 	
-	private static final Logger LOGGER=LoggerFactory.getLogger(ApiRestClientController.class);
 	@Autowired
 	 private OrderService orderService;
 	@Autowired
 	private ModelMapper mapper;
 	@Override
 	public ResponseEntity<OrderResponse> getOrderById(Long idOrder) {
-		LOGGER.info("Inside methode getOrderById of ApiRestOrderController  idOrder : {}",idOrder);
 		log.info("Inside methode getOrderById of ApiRestOrderController  idOrder : {}",idOrder);
 		if(idOrder==null) {
 			log.error("IdOrder connot be null");

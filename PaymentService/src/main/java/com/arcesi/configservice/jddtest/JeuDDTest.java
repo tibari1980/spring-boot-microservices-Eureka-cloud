@@ -18,13 +18,13 @@ public class JeuDDTest implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		for (int i = 0; i < 1; i++) {
+		for (int i = 1; i < 10; i++) {
 			TransactionDetails bean = TransactionDetails.builder().referenceNumber(UUID.randomUUID().toString())
 					.orderAmount(2500).payementDate(Instant.now()).modePayment("CREDIT_CARD")
 					.statusPayment("CREATED").orderId(i + 1)
 					.build();
 
-			//detailsRepository.save(bean);
+			detailsRepository.save(bean);
 		}
 	}
 

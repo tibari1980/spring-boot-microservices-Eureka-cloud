@@ -102,9 +102,23 @@ public class OrderServiceImp implements OrderService {
 		}
 		//Changing order status 
 		orderEntity.setStatusOrder(orderStatus);
-		orderRepository.saveAndFlush(orderEntity);
+		
+		log.info("Invoking Product Service to  fetch producut for  product id  :  {}  ", orderEntity.getIdProduct());
+		ProductResponse productResponse=
+				  restTemplate.getForObject("http://PRODUCT-SERVICE/api/v1/products/findById/"+ orderEntity.getIdProduct(), ProductResponse.class);
+		
+		log.info("Invoking Payment service to fetch details transacrtion for order id : {} ",orderEntity.getCodeOrder());
+		
+		TransactionDetailsResponse transactionDetailsResponse=
+				    restTemplate.getForObject("http://PAYMENT-SERVICE/api/v1/payments/getPaymentByOrderId/"+orderEntity.getCodeOrder(), TransactionDetailsResponse.class);
+		
+		modelMapper.getConfiguration().setAmbiguityIgnored(true);
+		OrderDTO dtoOrderDetails=modelMapper.map(orderEntity,OrderDTO.class);
+		dtoOrderDetails.setProductDetails(productResponse);
+		dtoOrderDetails.setTransactionDetails(modelMapper.map(transactionDetailsResponse, TransactionDetailsDTO.class));
 		log.info("Order Created successfully order : {}",orderEntity.toString());
-		return modelMapper.map(orderEntity, OrderDTO.class);
+		
+		return dtoOrderDetails;
 	}
 
 	@Override
