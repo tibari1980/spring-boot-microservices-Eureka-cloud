@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename compilation unit &apos;com.arcesi.orderservice.services.imp.OrderServieImp.java&apos; to &apos;OrderServiceImp.java&apos;&#x0D;&#x0A;- Original project: &apos;OrderService&apos;&#x0D;&#x0A;- Original element: &apos;com.arcesi.orderservice.services.imp.OrderServieImp.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.arcesi.orderservice.services.imp.OrderServiceImp.java&apos;" description="Rename compilation unit &apos;OrderServieImp.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.arcesi.orderservice.services.imp{OrderServieImp.java" name="OrderServiceImp.java" references="false" stamp="1683395053960" version="1.0"/>
-</session>
