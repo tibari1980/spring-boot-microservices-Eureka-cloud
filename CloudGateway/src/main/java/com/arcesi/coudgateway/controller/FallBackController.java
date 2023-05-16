@@ -20,4 +20,8 @@ public class FallBackController {
 	public String productServiceFallBack() {
 		return "Product Service is down!";
 	}
+	@GetMapping(value="/categoriesServiceFallBack")
+	public String categoryServiceFallBack() {
+		return "Category Service is down";
+	}
 }
