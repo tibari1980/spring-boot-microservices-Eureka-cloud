@@ -1,20 +1,17 @@
 package com.arcesi.ProductService.jdd;
 
-import java.time.Instant;
-import java.util.UUID;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-
-import com.arcesi.ProductService.entities.CategoryEntity;
-import com.arcesi.ProductService.entities.ProductEntity;
-import com.arcesi.ProductService.repositories.CategoryRepository;
-import com.arcesi.ProductService.repositories.ProductRepository;
 
 @Component
 public class JeuTest implements CommandLineRunner {
 
+	@Override
+	public void run(String... args) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+    /**
 	@Autowired
 	private CategoryRepository categoryRepository;
 	@Autowired
@@ -52,7 +49,7 @@ public class JeuTest implements CommandLineRunner {
 		CategoryEntity catOrdi=categoryRepository.save(ordinateur);
 		CategoryEntity cateLivre=categoryRepository.save(livre);
 		
-		for(int i=0;i<30;i++) {
+		for(int i=1;i<200;i++) {
 			ProductEntity tele=ProductEntity.builder()
 					.uidProduct(UUID.randomUUID().toString())
 					.designation("IPHONE PRO"+i)
@@ -113,6 +110,7 @@ public class JeuTest implements CommandLineRunner {
 		}
 	}
 
+      */
 
 	
 }

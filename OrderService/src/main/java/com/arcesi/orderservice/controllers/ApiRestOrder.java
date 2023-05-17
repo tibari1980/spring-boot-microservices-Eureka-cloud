@@ -16,6 +16,6 @@ public interface ApiRestOrder {
 	@GetMapping(value="/findOrderById/{idOrder}",produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<OrderResponse> getOrderById(@PathVariable(name="idOrder") @Positive(message = "Order Id must be greater than zero")   Long idOrder);
 
-	@DeleteMapping(value=" /{idOrder}")
+	@DeleteMapping(value="/{idOrder}")
 	public ResponseEntity<?> deleteOrderById(@PathVariable(name="idOrder") @Positive(message = "Order Id : must be greater than zero") Long idOrder);
 }
