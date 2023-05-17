@@ -46,12 +46,12 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>-->
-		
+
 		<dependency>
-	           <groupId>org.postgresql</groupId>
-	           <artifactId>postgresql</artifactId>
-	           <scope>runtime</scope>
-         </dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
@@ -90,14 +90,28 @@
 			<version>2.11.0</version>
 		</dependency>
 		<!-- ADD ZIPKIN-->
-       <dependency>
-      <groupId>io.micrometer</groupId>
-      <artifactId>micrometer-tracing-bridge-brave</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.zipkin.reporter2</groupId>
-      <artifactId>zipkin-reporter-brave</artifactId>
-    </dependency>
+		<dependency>
+			<groupId>io.micrometer</groupId>
+			<artifactId>micrometer-tracing-bridge-brave</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.zipkin.reporter2</groupId>
+			<artifactId>zipkin-reporter-brave</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-oauth2-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.okta.spring</groupId>
+			<artifactId>okta-spring-boot-starter</artifactId>
+			<version>3.0.3</version>
+		</dependency>
 
 	</dependencies>
 	<dependencyManagement>
