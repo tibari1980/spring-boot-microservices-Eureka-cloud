@@ -17,5 +17,5 @@ public interface ApiRestOrder {
 	public ResponseEntity<OrderResponse> getOrderById(@PathVariable(name="idOrder") @Positive(message = "Order Id must be greater than zero")   Long idOrder);
 
 	@DeleteMapping(value="/{idOrder}")
-	public ResponseEntity<?> deleteOrderById(@PathVariable(name="idOrder") @Positive(message = "Order Id : must be greater than zero") Long idOrder);
+	public ResponseEntity<String> deleteOrderById(@PathVariable(name="idOrder") @Positive(message = "Order Id : must be greater than zero") Long idOrder);
 }

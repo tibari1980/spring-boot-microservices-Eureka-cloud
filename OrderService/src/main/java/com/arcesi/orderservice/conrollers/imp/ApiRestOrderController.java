@@ -36,7 +36,7 @@ public class ApiRestOrderController implements ApiRestOrder {
 		return new ResponseEntity<OrderResponse>(mapper.map(dto, OrderResponse.class),HttpStatus.OK);
 	}
 	@Override
-	public ResponseEntity<?> deleteOrderById(Long idOrder) {
+	public ResponseEntity<String> deleteOrderById(Long idOrder) {
 		log.info("Inside methode deleteOrderById of ApiRestOrderController  idOrder :{}",idOrder);
 		if(null==idOrder) {
 			log.error("idOrder cannot be null try again : {}",idOrder);

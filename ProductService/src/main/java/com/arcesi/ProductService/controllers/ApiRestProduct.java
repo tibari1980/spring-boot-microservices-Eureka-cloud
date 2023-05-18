@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public interface ApiRestProduct {
 
 	//http://localhost:8087/api/v1/products/all?partialDesignation=ordi
 	
+	@PreAuthorize("hasAuthority('Admin') || hasAuthority('Customer') || hasAuthority('SCOPE_internal')")
 	@GetMapping(value = "all", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<List<ProductResponse>> getAllProducts(
 			@RequestParam(name = "partialDesignation", defaultValue = "", required = false) String partialDesignation,
