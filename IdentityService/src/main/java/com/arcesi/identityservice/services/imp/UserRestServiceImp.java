@@ -28,22 +28,25 @@ import com.arcesi.identityservice.repositories.UserBeanRepository;
 import com.arcesi.identityservice.services.IUserRestService;
 import com.arcesi.identityservice.validators.ObjectValidators;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-@RequiredArgsConstructor
+ 
 @Slf4j
 @Service
 @Transactional
 public class UserRestServiceImp implements IUserRestService {
 
+	@Autowired
 	private UserBeanRepository userRepository;
+	@Autowired
 	private RoleBeanRepository roleRepository;
+	@Autowired
 	private ModelMapper modelMapper;
 
 	@Autowired
 	private ObjectValidators<UserDTO> validator;
 
+	@Autowired
 	private ObjectValidators<RoleDTO> validatorRole;
 
 	@Override
@@ -129,7 +132,7 @@ public class UserRestServiceImp implements IUserRestService {
 		UserBean userBean = modelMapper.map(userDto, UserBean.class);
 		RoleBean roleBean = modelMapper.map(roleDto, RoleBean.class);
 		userBean.getRoleBeans().add(roleBean);
-
+        userRepository.saveAndFlush(userBean);
 		log.info("Role with role Name : ` {} ` added dto user with email : `{}`", roleName, userEmail);
 
 	}

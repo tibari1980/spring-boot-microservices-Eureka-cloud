@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.arcesi.identityservice.dtos.requests.AddRoleToUserRequest;
 import com.arcesi.identityservice.dtos.requests.RoleRequest;
 import com.arcesi.identityservice.dtos.requests.UserRequest;
 import com.arcesi.identityservice.dtos.responses.RoleResponse;
@@ -51,7 +52,7 @@ public interface ApiGestionUser {
 	public ResponseEntity<UserResponse> findUserByUid(@PathVariable(value = "uid") String uid);
 
 	@PostMapping(value = "/addRoleToUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<String> addRoleToUser(@NotBlank final String userEmail, @NotBlank final String roleName);
+	public ResponseEntity<String> addRoleToUser(@RequestBody final AddRoleToUserRequest addRoleToUserRequest);
 
 	@DeleteMapping(value = "/{idUser}")
 	public ResponseEntity<String> detelteUser(

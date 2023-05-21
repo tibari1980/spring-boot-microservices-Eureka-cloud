@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arcesi.identityservice.controllers.ApiGestionUser;
 import com.arcesi.identityservice.dtos.RoleDTO;
 import com.arcesi.identityservice.dtos.UserDTO;
+import com.arcesi.identityservice.dtos.requests.AddRoleToUserRequest;
 import com.arcesi.identityservice.dtos.requests.RoleRequest;
 import com.arcesi.identityservice.dtos.requests.UserRequest;
 import com.arcesi.identityservice.dtos.responses.RoleResponse;
@@ -23,18 +25,19 @@ import com.arcesi.identityservice.exceptions.ArgumentNotValidException;
 import com.arcesi.identityservice.services.IUserRestService;
 import com.arcesi.identityservice.utils.Constants;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
-@RequiredArgsConstructor
+ 
 @Slf4j
 @RequestMapping(value = Constants.APP_ROOT + "usersRoles")
 @Validated
 public class GestionUserControllerImp implements ApiGestionUser {
 
+	@Autowired
 	private IUserRestService iUserRestService;
 
+	@Autowired
 	private ModelMapper mapper;
 
 	@Override
@@ -108,18 +111,18 @@ public class GestionUserControllerImp implements ApiGestionUser {
 	}
 
 	@Override
-	public ResponseEntity<String> addRoleToUser(String userEmail, String roleName) {
+	public ResponseEntity<String> addRoleToUser(final AddRoleToUserRequest roleToUser) {
 		log.info("Inside methode addRoleToUser of GestionUserControllerImp   User email  : {} , Role name : {} ",
-				userEmail, roleName);
-		if (StringUtils.isBlank(userEmail) || StringUtils.isBlank(roleName)) {
-			log.error("Email or Role name are not valide try again email : {}, roleName : {}", userEmail, roleName);
+				roleToUser.getUserEmail(), roleToUser.getRoleName());
+		if (StringUtils.isBlank(roleToUser.getUserEmail()) || StringUtils.isBlank(roleToUser.getRoleName())) {
+			log.error("Email or Role name are not valide try again email : {}, roleName : {}", roleToUser.getUserEmail(),roleToUser.getRoleName());
 			throw new ArgumentNotValidException(
-					"User email or Role name : `" + userEmail + " -- " + roleName + "` are not valid try again",
+					"User email or Role name : `" + roleToUser.getUserEmail() + " -- " + roleToUser.getRoleName() + "` are not valid try again",
 					ErrorsCodeEnumeration.PARAMETRE_NOT_VALID);
 		}
-		iUserRestService.addRoleToUser(userEmail, roleName);
+		iUserRestService.addRoleToUser(roleToUser.getUserEmail(),roleToUser.getRoleName());
 
-		return null;
+		return new ResponseEntity<String>("Role with  : `"+roleToUser.getRoleName() + "`  Added to User with Email  : ` "+ roleToUser.getUserEmail()+" ` successfully !!",HttpStatus.ACCEPTED);
 	}
 
 	@Override
