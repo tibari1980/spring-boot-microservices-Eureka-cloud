@@ -1,17 +1,22 @@
 package com.arcesi.ProductService.jdd;
 
+import java.time.Instant;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import com.arcesi.ProductService.entities.CategoryEntity;
+import com.arcesi.ProductService.entities.ProductEntity;
+import com.arcesi.ProductService.repositories.CategoryRepository;
+import com.arcesi.ProductService.repositories.ProductRepository;
 
 @Component
 public class JeuTest implements CommandLineRunner {
 
-	@Override
-	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-    /**
+ 
+    
 	@Autowired
 	private CategoryRepository categoryRepository;
 	@Autowired
@@ -109,8 +114,7 @@ public class JeuTest implements CommandLineRunner {
 			
 		}
 	}
-
-      */
+ 
 
 	
 }

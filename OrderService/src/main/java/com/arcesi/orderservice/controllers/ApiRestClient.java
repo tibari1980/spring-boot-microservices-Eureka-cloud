@@ -2,7 +2,6 @@ package com.arcesi.orderservice.controllers;
 
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,7 +15,6 @@ public interface ApiRestClient {
 
 	
 	@PostMapping(value="{idClient}/orders",produces = MediaType.APPLICATION_JSON_VALUE,consumes = MediaType.APPLICATION_JSON_VALUE)
-	@PreAuthorize("hasAuthority('Customer')")
 	public ResponseEntity<OrderResponse> createOrder(@RequestBody final OrderRequest orderRequest,
 			@PathVariable(name = "idClient") @Positive(message = "Client Id must be greater than zero.") Long idClient);
 
