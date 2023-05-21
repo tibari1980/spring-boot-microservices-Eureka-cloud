@@ -54,11 +54,11 @@ public interface ApiGestionUser {
 	@PostMapping(value = "/addRoleToUser", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<String> addRoleToUser(@RequestBody final AddRoleToUserRequest addRoleToUserRequest);
 
-	@DeleteMapping(value = "/{idUser}")
+	@DeleteMapping(value = "user/{idUser}")
 	public ResponseEntity<String> detelteUser(
 			@PathVariable(value = "idUser") @Positive(message = "User ID must be greater than zero") Long idUser);
 
-	@DeleteMapping(value = "/{idRole}")
+	@DeleteMapping(value = "role/{idRole}")
 	public ResponseEntity<String> detelteRole(
 			@PathVariable(value = "idRole") @Positive(message = "Role ID must be greater than zero") Long idRole);
 

@@ -1,6 +1,7 @@
 package com.arcesi.identityservice.services.imp;
 
 import java.time.Instant;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -86,7 +87,7 @@ public class UserRestServiceImp implements IUserRestService {
 
 		if (findRole.isEmpty()) {
 			log.error("Role not exist with : ` {} ` in our data base try again!!", roleName);
-			throw new EntityNotFoundException("Category exist with : `" + roleName + "` in our data base try again!!",
+			throw new EntityNotFoundException("Role not exist with name  : `" + roleName + "` in our data base try again!!",
 					ErrorsCodeEnumeration.ROLE_NOT_FOUND);
 		}
 
@@ -189,12 +190,10 @@ public class UserRestServiceImp implements IUserRestService {
 			}
 		}
 
-		findUserInOurDB.setCreatedAt(userDto.getCreatedAt());
+		
 		findUserInOurDB.setEmail(userDto.getEmail());
 		findUserInOurDB.setFirstName(userDto.getFirstName());
 		findUserInOurDB.setLastName(userDto.getLastName());
-		findUserInOurDB.setEnabled(userDto.getEnabled());
-		findUserInOurDB.setLocked(userDto.getLocked());
 		findUserInOurDB.setUpdatedAt(Instant.now());
 		userRepository.saveAndFlush(findUserInOurDB);
 		log.info("User updated successfully : {}", findUserInOurDB);
@@ -259,6 +258,7 @@ public class UserRestServiceImp implements IUserRestService {
 					ErrorsCodeEnumeration.USER_NOT_FOUND);
 		}
 
+		userDto.setRoleDTOs(new HashSet<>());
 		userDto.getRoleDTOs().add(modelMapper.map(findRole, RoleDTO.class));
 		userDto.setUidUser(UUID.randomUUID().toString());
 		userDto.setEnabled(Boolean.FALSE);

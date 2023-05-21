@@ -3,6 +3,8 @@ package com.arcesi.identityservice.dtos.requests;
 import java.io.Serializable;
 import java.time.Instant;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,16 +21,22 @@ import lombok.ToString;
 public class RoleRequest implements Serializable{
 
 	
+	 
 	private static final long serialVersionUID = 1L;
+	
+	 
+	@JsonIgnore
 	private Long codeRole;
- 	private String codeUniqueRole;
+	@JsonIgnore
+	private String codeUniqueRole;
  	private String roleName;
+ 	@JsonIgnore
  	private Instant createdAt;
+ 	@JsonIgnore
  	private Instant updatedAt;
 	 
 	
 	
 	
-
 
 }
