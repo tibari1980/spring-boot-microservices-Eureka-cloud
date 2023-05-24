@@ -3,9 +3,9 @@ package com.arcesi.identityservice.enums;
 public enum AppUserRole {
 	
 
-	CUSTOMER("ROLE_CUSTOMER"),
-	MANAGER("ROLE_MANAGER"),
-	ADMINISTRATEUR("ROLE_ADMINISTRATEUR");
+	CUSTOMER("CUSTOMER"),
+	MANAGER("MANAGER"),
+	ADMINISTRATEUR("ADMINISTRATEUR");
 	
 	private final String id;
 	

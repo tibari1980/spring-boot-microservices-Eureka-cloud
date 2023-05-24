@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.modelmapper.internal.bytebuddy.description.NamedElement.WithOptionalName;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
@@ -34,6 +33,7 @@ public class JeuDonneTest  implements CommandLineRunner   {
 	private RoleBeanRepository roleRepository;
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
+	@SuppressWarnings("unused")
 	@Override
 	public void run(String... args) throws Exception {
 		userRepository.deleteAllInBatch();

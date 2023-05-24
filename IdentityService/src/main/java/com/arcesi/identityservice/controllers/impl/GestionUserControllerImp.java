@@ -122,7 +122,7 @@ public class GestionUserControllerImp implements ApiGestionUser {
 		}
 		iUserRestService.addRoleToUser(roleToUser.getUserEmail(),roleToUser.getRoleName());
 
-		return new ResponseEntity<String>("Role with  : `"+roleToUser.getRoleName() + "`  Added to User with Email  : ` "+ roleToUser.getUserEmail()+" ` successfully !!",HttpStatus.ACCEPTED);
+		return new ResponseEntity<String>("Role with  : `"+ roleToUser.getRoleName() + " `  Added to User with Email  : ` "+ roleToUser.getUserEmail()+" ` successfully !!",HttpStatus.ACCEPTED);
 	}
 
 	@Override
@@ -135,7 +135,7 @@ public class GestionUserControllerImp implements ApiGestionUser {
 		}
 		iUserRestService.deleteUserById(idUser);
 		return new ResponseEntity<String>("User with id :`" + idUser + "`deleted successfully  ",
-				HttpStatus.NO_CONTENT);
+				HttpStatus.OK);
 	}
 
 	@Override
@@ -148,7 +148,7 @@ public class GestionUserControllerImp implements ApiGestionUser {
 		}
 		iUserRestService.deleteRoleById(idRole);
 		return new ResponseEntity<String>("Role with id :`" + idRole + "`deleted successfully  ",
-				HttpStatus.NO_CONTENT);
+				HttpStatus.OK);
 	}
 
 	@Override

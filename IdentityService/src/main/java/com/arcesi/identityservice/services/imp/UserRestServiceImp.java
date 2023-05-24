@@ -241,7 +241,7 @@ public class UserRestServiceImp implements IUserRestService {
 		Map<String, String> violations = validator.validate(userDto);
 		if (!violations.isEmpty()) {
 
-			log.error("There are errors while saving product try again ! ", violations);
+			log.error("There are errors while saving user try again ! ", violations);
 			throw new ArgumentNotValideEntityException("There are errors while saving user try again !!!",
 					ErrorsCodeEnumeration.USER_NOT_VALIDE, violations);
 		}
@@ -249,7 +249,7 @@ public class UserRestServiceImp implements IUserRestService {
 				.orElseThrow(() -> new EntityNotFoundException(
 						"Role with id : ` " + roleId + "` not found in our data base try again !!",
 						ErrorsCodeEnumeration.ROLE_NOT_FOUND));
-		// check if Product Exist by Designation
+		// check if user Exist by email
 		Optional<UserBean> ifExistUser = userRepository.findUserBeanByEmail(userDto.getEmail());
 		if (ifExistUser.isPresent()) {
 			log.error("User exist with  email : ` {} ` in our data base try again!!", userDto.getEmail());

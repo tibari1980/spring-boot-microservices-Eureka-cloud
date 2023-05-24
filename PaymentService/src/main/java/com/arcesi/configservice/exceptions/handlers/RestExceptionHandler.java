@@ -3,9 +3,7 @@ package com.arcesi.configservice.exceptions.handlers;
 import java.time.Instant;
 import java.time.format.DateTimeFormatter;
 
-import org.apache.catalina.WebResource;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

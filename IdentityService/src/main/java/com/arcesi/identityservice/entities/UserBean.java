@@ -2,10 +2,14 @@ package com.arcesi.identityservice.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.Collection;
+import java.util.List;
 import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -17,6 +21,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
@@ -36,7 +41,7 @@ import lombok.ToString;
 @Table(name = "USERS", uniqueConstraints = { @UniqueConstraint(columnNames = "email", name = "user_email_unique"),
 		@UniqueConstraint(columnNames = "CLE_UNIQUE_USER", name = "user_uidUser_unique") })
 @Builder
-public class UserBean implements Serializable {
+public class UserBean implements Serializable,UserDetails {
 	
 	private static final long serialVersionUID = -6515559816600750171L;
 	@SequenceGenerator(name = "appuser_sequence", allocationSize = 1, sequenceName = "appuse_sequence")
@@ -61,6 +66,10 @@ public class UserBean implements Serializable {
 			 inverseJoinColumns = @JoinColumn(name="role_id")
 			)
 	private Set<RoleBean> roleBeans;
+	
+	  @OneToMany(mappedBy = "userBean")
+	  private List<TokenBean> tokens;
+	
 	@Column(name = "LOCKED")
 	private Boolean locked;
 	@Column(name = "ENABLED")
@@ -76,6 +85,36 @@ public class UserBean implements Serializable {
 	@LastModifiedDate
 	@Column(name="UPDATED_AT",updatable = true,nullable = true)
 	private Instant updatedAt;
+
+	@Override
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return null;
+	}
+
+	@Override
+	public String getUsername() {
+		return email;
+	}
+
+	@Override
+	public boolean isAccountNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isAccountNonLocked() {
+		return true;
+	}
+
+	@Override
+	public boolean isCredentialsNonExpired() {
+		return true;
+	}
+
+	@Override
+	public boolean isEnabled() {
+		return true;
+	}
 
 	
 	 
