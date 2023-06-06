@@ -1,7 +1,7 @@
 package com.arcesi.identityservice.security.auth;
 
  
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.arcesi.identityservice.entities.RoleBean;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,15 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class RegisterRequest {
 
-	@JsonIgnore
-	private Long id;
-	
-	@JsonIgnore
-	private String uidUser;
- 	
-	private String firstName;
- 	private String lastName;
- 	private String email;
- 	private String password;
- 	
+  private String firstname;
+  private String lastname;
+  private String email;
+  private String password;
+  private RoleBean role;
 }

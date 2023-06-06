@@ -2,19 +2,25 @@ package com.arcesi.identityservice.entities;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -29,13 +35,12 @@ import lombok.ToString;
 		@UniqueConstraint(columnNames = "CODE_ROLE", name = "CODE_ROLE_SEQUENCE"),
 		@UniqueConstraint(columnNames = "CODE_ROLE_UNIQUE", name = "CODE_ROLE_UNIQUE_SEQUENCE") })
 
+
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
-@AllArgsConstructor
 @EqualsAndHashCode
-@Builder
 public class RoleBean implements Serializable {
 
 	
@@ -62,6 +67,29 @@ public class RoleBean implements Serializable {
 	@LastModifiedDate
 	@Column(name="UPDATED_AT",updatable = true,nullable = true)
 	private Instant updatedAt;
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+	    @JoinTable(
+	        name = "roles_privileges", 
+	        joinColumns = @JoinColumn (
+	          name = "role_id", referencedColumnName = "CODE_ROLE"), 
+	        inverseJoinColumns = @JoinColumn(
+	          name = "privilege_id", referencedColumnName = "CODE_PRIVILEGE"))    
+    
+	
+	private Set<PrivilegeBean> privilegeBeans=new HashSet<>();
+
+	@Builder
+	public RoleBean(Long codeRole, String codeUniqueRole, String roleName, Instant createdAt, Instant updatedAt,
+			Set<PrivilegeBean> privilegeBeans) {
+		super();
+		this.codeRole = codeRole;
+		this.codeUniqueRole = codeUniqueRole;
+		this.roleName = roleName;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+		this.privilegeBeans = new HashSet<>();
+	}
 	
 	 
 	

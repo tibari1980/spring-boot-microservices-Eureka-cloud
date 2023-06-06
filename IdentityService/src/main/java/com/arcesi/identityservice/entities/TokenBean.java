@@ -1,7 +1,11 @@
 package com.arcesi.identityservice.entities;
 
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.arcesi.identityservice.enums.TokenType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,6 +21,7 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Builder.Default;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -47,8 +52,11 @@ public class TokenBean {
 	  @Column(name="EXPIRED_AT",insertable = true)
 	  public boolean expired;
 
-	  @ManyToOne(fetch = FetchType.LAZY)
-	  @JoinColumn(name = "idUser")
+	  
+	  @ManyToOne(fetch = FetchType.EAGER,optional = false)
+		@JoinColumn(name="CODE_USER_fk",nullable = false)
+		@OnDelete(action = OnDeleteAction.CASCADE)
+		//@JsonIgnore
 	  public UserBean userBean;
 	  
 

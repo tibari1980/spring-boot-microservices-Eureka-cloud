@@ -5,7 +5,7 @@ public enum AppUserRole {
 
 	CUSTOMER("CUSTOMER"),
 	MANAGER("MANAGER"),
-	ADMINISTRATEUR("ADMINISTRATEUR");
+	ADMINISTRATEUR("ADMIN");
 	
 	private final String id;
 	

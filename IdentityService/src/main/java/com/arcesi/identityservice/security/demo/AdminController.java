@@ -2,6 +2,8 @@ package com.arcesi.identityservice.security.demo;
 
 import io.swagger.v3.oas.annotations.Hidden;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,12 +13,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/admin")
-@PreAuthorize("hasRole('ADMIN')")
+@PreAuthorize("hasAuthority('CUSTOMER')")
 public class AdminController {
 
     @GetMapping
     @PreAuthorize("hasAuthority('admin:read')")
     public String get() {
+    	Authentication auth=SecurityContextHolder.getContext().getAuthentication();
+    	System.out.println(auth);
         return "GET:: admin controller";
     }
     @PostMapping

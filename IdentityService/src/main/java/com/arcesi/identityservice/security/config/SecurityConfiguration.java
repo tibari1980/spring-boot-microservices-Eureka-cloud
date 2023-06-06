@@ -1,5 +1,6 @@
 package com.arcesi.identityservice.security.config;
 
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
@@ -13,6 +14,22 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.security.web.authentication.logout.LogoutHandler;
 
 import com.arcesi.identityservice.enums.AppUserRole;
+import com.arcesi.identityservice.enums.Permission;
+import static com.arcesi.identityservice.enums.Permission.ADMIN_CREATE;
+import static com.arcesi.identityservice.enums.Permission.ADMIN_UPDATE;
+import static com.arcesi.identityservice.enums.Permission.ADMIN_READ;
+import static com.arcesi.identityservice.enums.Permission.ADMIN_DELETE;
+
+import static com.arcesi.identityservice.enums.Permission.MANAGER_CREATE;
+import static com.arcesi.identityservice.enums.Permission.MANAGER_UPDATE;
+import static com.arcesi.identityservice.enums.Permission.MANAGER_DELETE;
+import static com.arcesi.identityservice.enums.Permission.MANAGER_READ;
+
+import static org.springframework.http.HttpMethod.DELETE;
+import static org.springframework.http.HttpMethod.GET;
+import static org.springframework.http.HttpMethod.POST;
+import static org.springframework.http.HttpMethod.PUT;
+
 
 import lombok.RequiredArgsConstructor;
 
@@ -33,7 +50,8 @@ public class SecurityConfiguration {
         .disable()
         .authorizeHttpRequests()
         .requestMatchers(
-                "/api/v1/auth/**",
+        		"/api/v1/auth/authenticate",
+        		"/api/v1/auth/register",
                 "/v2/api-docs",
                 "/v3/api-docs",
                 "/v3/api-docs/**",
@@ -43,14 +61,27 @@ public class SecurityConfiguration {
                 "/configuration/security",
                 "/swagger-ui/**",
                 "/webjars/**",
-                "/swagger-ui.html",
-                "/api/v1/auth/register"
+                "/swagger-ui.html"
         )
           .permitAll()
 
 
-        //.requestMatchers("/api/v1/management/**").hasAnyRole(AppUserRole.ADMINISTRATEUR.name(),AppUserRole.MANAGER.name())
-        
+          .requestMatchers("/api/v1/management/**").hasAnyAuthority(AppUserRole.ADMINISTRATEUR.getId(), AppUserRole.MANAGER.getId())
+
+          
+        .requestMatchers(GET, "/api/v1/management/**").hasAnyAuthority(ADMIN_READ.name(), MANAGER_READ.name())
+        .requestMatchers(POST, "/api/v1/management/**").hasAnyAuthority(ADMIN_CREATE.name(), MANAGER_CREATE.name())
+        .requestMatchers(PUT, "/api/v1/management/**").hasAnyAuthority(ADMIN_UPDATE.name(), MANAGER_UPDATE.name())
+        .requestMatchers(DELETE, "/api/v1/management/**").hasAnyAuthority(ADMIN_DELETE.name(), MANAGER_DELETE.name())
+
+
+        .requestMatchers("/api/v1/admin/**").hasAuthority(AppUserRole.ADMINISTRATEUR.getId())
+
+        .requestMatchers(GET, "/api/v1/admin/**").hasAuthority(Permission.ADMIN_READ.name())
+        .requestMatchers(POST, "/api/v1/admin/**").hasAuthority(Permission.ADMIN_CREATE.name())
+        .requestMatchers(PUT, "/api/v1/admin/**").hasAuthority(Permission.ADMIN_UPDATE.name())
+        .requestMatchers(DELETE, "/api/v1/admin/**").hasAuthority(Permission.ADMIN_DELETE.name())
+
 
         .anyRequest()
           .authenticated()
